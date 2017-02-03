@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>客户管理</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Cache-Control" content="no-store" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1"/>
+	 <link rel="stylesheet" type="text/css" href="css/bootstrap-xmo.css">
+  
+	
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/offcanvas.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/calendar/xmo-calendar.css">
+
+
+
+
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/jquery.dataTables.js?"></script>
+	 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	 <script type="text/javascript" src="js/fnPagingInfo.js"></script>
+	 <script type="text/javascript" src="js/xmo-calendar.js"></script>
+	 <script type="text/javascript" src="js/highmaps.js"></script>
+	 <script type="text/javascript" src="js/cn-all-sar-taiwan.js"></script>
+	 
+	
+</head>
+    <body>
+    	<script type="text/javascript">
+    		var strStoreDate = window.localStorage? localStorage.getItem("menu-display"): Cookie.read("menu-display");
+		      if(strStoreDate && strStoreDate=="hide"){
+		          $("body").addClass("x-hide");
+		      }
+    	</script>
+    	<!--头部-->
+    	<div class="myheading">
+			<nav class="navbar navbar-inverse">
+				<div class="x-navbar">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed my-collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+						<a href="#" class="navbar-brand" data-toggle="offcanvas">
+							<img src="images/logo1.png" alt="" style="width:118px">
+						</a>
+					</div>
+						
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">	
+						 <div class="x-top-menu" >
+							<ul class="nav navbar-nav">
+								<li ><a href="#">Home</a></li>
+								<li ><a href="#">Agencies</a></li>
+								<li ><a href="./index.html">Advertisers</a></li>
+								<li><a href="./Campaigns.html">Campaigns</a></li>
+								<li>
+									<a href="#">Library</a>
+									<ul class="dropdown-top-menu" aria-labelledby="dropdownMenu1">
+									    <li><a href="./Tracking.html">Tracking</a></li>
+									    <li><a href="./Audience.html">Audience</a></li>
+									    <li><a href="./AdCreative.html">Ad Creatives</a></li>
+									    <li><a href="./AdPlacement.html">Ad Placements</a></li>
+									  </ul>
+								</li>
+								<li><a href="./Report.html">Reports</a></li>
+								<li class="selected"><a href="./Tools.html">Tools</a></li>
+							</ul>
+							
+						</div>
+						<!-- Single button -->
+						<div class="x-user-main  navbar-right ">
+							<div class="x-user-con">
+									<span class="glyphicon glyphicon-user x-user "></span>
+									<span class="x-user-dis">Admin:<br/>Shirely.admin<br/> </span>
+									<span class="glyphicon glyphicon-triangle-bottom x-user-arrow"></span>
+							</div>
+							<ul class="x-user-list">
+								<li >
+									<span class="iclick-ico"></span>
+									<a class="x-user-config" href="#">Platform Setting</a>
+								</li>
+								<li >
+									<span class="glyphicon glyphicon-cog"></span>
+									<a class="x-user-config" href="#">Account Settings</a>
+								</li>
+								<li >
+									<span class="glyphicon glyphicon-log-out"></span>
+									<a class="x-user-config" href="#">Logout</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="x-user-con navbar-right x-bell">
+							<span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+							<span class="x-tip">6</span>
+						</div>
+						
+						<div class="navbar-form navbar-right" >
+							
+						       
+						        <span class="x-lang-en selected"></span>
+						        <span class="x-lang-ch"></span>
+						      </div>
+					</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<!--左边栏-->
+    	<div class="x-main bg-clear">
+			<div class="x-nav row row-offcanvas row-offcanvas-left">
+    			<div class="sidebar-offcanvas x-left">
+    				<div class="x-left-title x-left-title-tools">
+					  	<p>Keywords connect you with your target audience to bring more customers to your site.</p>
+					</div>
+
+					<div class="x-left-search x-left-search-tools" >
+						<div class="x-search-title x-search-title-tools"><label>Your product or service</label></div>
+						<div class="x-search-search x-search-search-tools bg-clear">
+							<input placeholder="Search"  value="Beauty,Make up"/>
+							<span class="input-plus-ico glyphicon glyphicon-plus-sign" ></span>
+							<button >Get some ideas</button>
+						</div>
+					</div>
+					<div class="x-left-content x-left-content-tools">
+						<span>Targeting</span>
+						<input value="All genders" class="disabled" disabled/>
+						<input value="China" class="disabled" disabled/>
+					</div>
+					
+				</div>
+	    		
+		    	<div class="x-body">
+
+					<div class="x-show-control"></div>
+
+					
+					<div class="x-body-container">
+						 <!-- Page title -->
+						<div class="page-title">
+						  <div id="breadcrumb" class="x-row">
+						    <!-- Top left headings and links -->
+						    <div class="client-row">
+						      
+						      <div class="x-row"><span class="content_name_12">Tool</span></div>
+								<div class="x-row"><div class="client-row"><h2>Media Planning</h2></div></div>
+						    </div>
+						    
+						    </div>
+						  
+						  
+						</div>
+						 <!-- Page title -->
+
+						
+						<div class="tab-content" id="myTabContent">
+							<div class="tab-pane fade in active" id="tab-Audience">
+								<ul class="nav nav-pills event_filter">
+									<li class="filter_icon active">
+										<a class="has_tooltip event_filter_link"  href="#" >
+											<i class="glyphicon glyphicon-share-alt"></i>
+											<span> Report </span>
+											<i class="glyphicon glyphicon-triangle-bottom arrow-calendar"></i>
+										</a>
+									</li>
+									
+									<li class="filter_icon active">
+										<div class="date-range">
+											<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+											<input type="text" id="daterange" placeholder="" value="2015-06-10 ~ 2015-06-11" class="form-control date-range-input"/>
+											<span class="caret arrow-calendar"></span>
+										</div>
+									</li>
+								</ul>
+
+								<div class="chart-list">
+									<div class="chart-col">
+										<div class="chart-inner"> 
+											<div class="chart-msg">
+												<div class="chart-header clearfix">
+													<span class="page-title main-title" id="date_header">Gender</span>
+													<p class="light"> </p>
+												</div>
+												<div class="chart-info clearfix x-mt10">
+													<div class="vs-left">
+														<p>60</p>	
+														<p>FEMALE(%)</p>
+													</div>
+													<div class="vs-vs">VS</div>
+													<div class="vs-right">
+														<p>40</p>	
+														<p>MALE(%)</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="chart-col">
+										<div class="chart-inner"> 
+											<div class="chart-msg">
+												<div class="chart-header clearfix">
+													<span class="page-title main-title" id="date_header">Age Group</span>
+													<p class="light"> </p>
+												</div>
+												<div class="chart-info">
+													<div id="container" class="chart-container clearfix">
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="chart-col">
+										<div class="chart-inner"> 
+											<div class="chart-msg">
+												<div class="chart-header clearfix">
+													<span class="page-title main-title" id="date_header">Devices</span>
+													<p class="light"> </p>
+												</div>
+												<div class="chart-info">
+													<div id="container1" class="chart-container clearfix">
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="chart-col">
+										<div class="chart-inner"> 
+											<div class="chart-msg">
+												<div class="chart-header clearfix">
+													<span class="page-title main-title" id="date_header">Interests</span>
+													<p class="light">TOP 3 INTEREST LABELS</p>
+												</div>
+												<div class="chart-info">
+													<ul class="chart-top top3">
+														<li>
+															<span class="x-tip num-top">1</span>
+															<span class="top-title">Overseas Education</span>
+															<span class="top-percent">34.5%</span>
+														</li>
+														<li>
+															<span class="x-tip num-top bg-6c6c6c">2</span>
+															<span class="top-title">High-End Cars</span>
+															<span class="top-percent">23.5%</span>
+														</li>
+														<li>
+															<span class="x-tip num-top bg-d6d6d6">3</span>
+															<span class="top-title">Auto Accessors</span>
+															<span class="top-percent">11.5%</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="chart-col w-40">
+										<div class="chart-inner"> 
+											<div class="chart-msg min-h-376">
+												<div class="chart-header clearfix">
+													<span class="page-title main-title" id="date_header">Location</span>
+													
+												</div>
+												<div class="chart-info" style="height:300px;" id="container3">
+
+												</div>	
+											</div>
+										</div>
+									</div>
+									<div class="chart-col w-35">
+										<div class="chart-inner"> 
+											<div class="chart-msg min-h-376">
+												<div class="chart-header clearfix">
+													<p class="light">TOP 10 LOCATIONS</p>
+												</div>
+												<div class="chart-info clearfix">
+													<div class="chart-top-left">
+														<ul class="chart-top">
+														<li class="chart-tab clearfix">
+															<span class="num-top">Provinces</span>
+															<label class="switch" for="switch-input">
+																<input type="checkbox" checked>
+																<span class="switch-left"></span>
+																<i class="controller"></i>
+																<span class="switch-right"></span>
+															</label>
+														</li>
+														<li>
+															<span class="num-top">1</span>
+															<span class="top-title">
+																<a href="#">Hebei</a>
+															</span>
+															<span class="top-percent">34.5%</span>
+														</li>
+														<li>
+															<span class="num-top">2</span>
+															<span class="top-title">
+																<a href="#">Shanxi</a>
+															</span>
+															<span class="top-percent">23.5%</span>
+														</li>
+														<li>
+															<span class="num-top">3</span>
+															<span class="top-title">Beijing</span>
+															<span class="top-percent">11.5%</span>
+														</li>
+														<li>
+															<span class="num-top">4</span>
+															<span class="top-title">Beijing</span>
+															<span class="top-percent">11.5%</span>
+														</li>
+														<li>
+															<span class="num-top">5</span>
+															<span class="top-title">Beijing</span>
+															<span class="top-percent">11.5%</span>
+														</li>
+														<li>
+															<span class="num-top">6</span>
+															<span class="top-title">Beijing</span>
+															<span class="top-percent">11.5%</span>
+														</li>
+														<li>
+															<span class="num-top">7</span>
+															<span class="top-title">Beijing</span>
+															<span class="top-percent">11.5%</span>
+														</li>
+														<li>
+															<span class="num-top">8</span>
+															<span class="top-title">Beijing</span>
+															<span class="top-percent">11.5%</span>
+														</li>
+														<li>
+															<span class="num-top">9</span>
+															<span class="top-title">Beijing</span>
+															<span class="top-percent">11.5%</span>
+														</li>
+														<li>
+															<span class="num-top">10</span>
+															<span class="top-title">Beijing</span>
+															<span class="top-percent">11.5%</span>
+														</li>
+													</ul>
+													</div>
+													
+													<div class="chart-top-right">
+														<ul class="chart-top">
+														<li class="chart-tab clearfix">
+															<span class="num-top">City</span>
+															<label class="switch switch-disable-ing" for="switch-input">
+																<input type="checkbox" checked>
+																<span class="switch-left"></span>
+																<i class="controller"></i>
+																<span class="switch-right"></span>
+															</label>
+														</li>
+														<li>
+															<span class="num-top">1</span>
+															<span class="top-title">Hebei</span>
+															<span class="top-percent">34.5%</span>
+														</li>
+														<li>
+															<span class="num-top">2</span>
+															<span class="top-title">Shanxi</span>
+															<span class="top-percent">23.5%</span>
+														</li>
+														<li>
+															<span class="num-top">3</span>
+															<span class="top-title">Beijing</span>
+															<span class="top-percent">11.5%</span>
+														</li>
+														<li>
+															<span class="num-top">4</span>
+															<span class="top-title">Beijing</span>
+															<span class="top-percent">11.5%</span>
+														</li>
+														<li>
+															<span class="num-top">5</span>
+															<span class="top-title">Beijing</span>
+															<span class="top-percent">11.5%</span>
+														</li>
+														<li>
+															<span class="num-top">6</span>
+															<span class="top-title">Beijing</span>
+															<span class="top-percent">11.5%</span>
+														</li>
+														<li>
+															<span class="num-top">7</span>
+															<span class="top-title">Beijing</span>
+															<span class="top-percent">11.5%</span>
+														</li>
+														<li>
+															<span class="num-top">8</span>
+															<span class="top-title">Beijing</span>
+															<span class="top-percent">11.5%</span>
+														</li>
+														<li>
+															<span class="num-top">9</span>
+															<span class="top-title">Beijing</span>
+															<span class="top-percent">11.5%</span>
+														</li>
+														<li>
+															<span class="num-top">10</span>
+															<span class="top-title">Beijing</span>
+															<span class="top-percent">11.5%</span>
+														</li>
+													</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="chart-col">
+										<div class="chart-inner"> 
+											<div class="chart-msg min-h-376">
+												<div class="chart-header clearfix">
+													<span class="page-title  main-title" id="date_header">SUGGESTED MEDIA</span>
+													<p class="light">TOP 5 WEBSITES</p>
+												</div>
+												<div class="chart-info">
+													<ul class="chart-top top3">
+														<li>
+															<span class="x-tip num-top">1</span>
+															<span class="top-title">Baomihwa</span>
+															<span class="top-percent">DSP</span>
+														</li>
+														<li>
+															<span class="x-tip num-top bg-6c6c6c">2</span>
+															<span class="top-title">MoTV</span>
+															<span class="top-percent">Premium Media</span>
+														</li>
+														<li>
+															<span class="x-tip num-top bg-d6d6d6">3</span>
+															<span class="top-title">Sohu</span>
+															<span class="top-percent">OTV</span>
+														</li>
+														<li>
+															<span class="x-tip num-top bg-A9A9A9">4</span>
+															<span class="top-title">OptAim</span>
+															<span class="top-percent">DSP</span>
+														</li>
+														<li>
+															<span class="x-tip num-top bg-D5D5D5">5</span>
+															<span class="top-title">Baofeng</span>
+															<span class="top-percent">Premium Media</span>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>	
+
+							</div>
+							<div class="tab-pane fade" id="tab-crossMarket">
+								crossMarket
+							</div>
+						</div>
+						
+				</div>
+			</div>  
+		</div>
+		<div class="clear"></div>
+			<div class="x-nav row row-offcanvas row-offcanvas-left">
+			<div class="sidebar-offcanvas"></div>
+			<div class="myfooter">
+					© 2009 - 2015 iClick Interactive Asia Limited. All Rights Reserved. 
+			</div>
+		</div>
+    </body>
+    <script type="text/javascript">
+    	$(".switch").click(function(){
+    		if($(this).hasClass("switch-disable-ing") ){
+    			$(this).removeClass("switch-disable-ing");
+    			$(this).find("input").attr("checked",true);
+    		}else{
+    			$(this).addClass("switch-disable-ing");
+    			$(this).find("input").attr("checked",false);
+    		}
+    			
+    	})
+
+    	$(function(){
+    		new xmoCalendar({
+			  inputId : '#daterange',
+			  // lang : 'EN',
+			  lang : "CN", //"CN" "EN"
+			  initTime : '2013-10-28',
+			  offsetLeft:"0",
+			  arrowLeft:"0",
+			  submitCallback : function(){
+			      update_days_remaining();
+			  },
+			  
+			})
+	      
+
+    		var option ={
+		        chart: {
+		            type: 'column'
+		        },
+		        title:"",
+		        xAxis: {
+		            categories: [
+		                '<14',
+		                '15~',
+		                '25~',
+		                '35~'
+		            ],
+		            gridLineWidth: 0
+		        },
+		        yAxis: {
+		            min: 0,
+		            title: {
+		                text: 'Rainfall (mm)'
+		            },
+		            gridLineWidth: 0
+		        },
+		        legend: {
+				    enabled: false
+				},
+		        tooltip: {
+		            headerFormat: '<span style="font-size:10px">{point.key}</span>',
+		            pointFormat: '' +
+		                '',
+		            footerFormat: '<table><tbody><tr><td style="color:{series.color};padding:0">{series.name}: </td><td style="padding:0"><b>{point.y:.1f} mm</b></td></tr></tbody></table>',
+		            shared: true,
+		            useHTML: true
+		        },
+		        plotOptions: {
+		            column: {
+		                pointPadding: 0.2,
+		                borderWidth: 0
+		            }
+		        },
+		        credits: {
+		        	enabled:false,
+	            	text: 'iClick.com',
+	            	href: 'http://www.i-click.com'
+	        	},
+		        series: [ {
+		        	name:"test",
+		            data: [42.4, 33.2, 34.5, 39.7]
+
+		        }]
+		    };
+    		 $('#container').highcharts(option);
+    		 $('#container1').highcharts(option);
+
+    		 //highmaps
+    		 // Prepare demo data
+		    var data = [
+		        {
+		            "hc-key": "cn-sx",
+		            "z": 10,
+		            "rank":1
+		        },
+		        {
+		            "hc-key": "cn-sh",
+		            "z": 11,
+		            "rank":2
+		        },
+		        {
+		            "hc-key": "cn-yn",
+		            "z": 2,
+		            "rank":3
+		        },
+		        {
+		            "hc-key": "cn-zj",
+		            "z": 3,
+		            "rank":4
+		        },
+		        {
+		            "hc-key": "cn-jx",
+		            "z": 4,
+		            "rank":5
+		        },
+		        
+		        {
+		            "hc-key": "cn-bj",
+		            "z": 6,
+		            "rank":6
+		        },
+		        {
+		            "hc-key": "cn-fj",
+		            "z": 7,
+		            "rank":7
+		        },
+		        {
+		            "hc-key": "cn-gd",
+		            "z": 8,
+		            "rank":8
+		        },
+		        
+		        {
+		            "hc-key": "cn-qz",
+		            "z": 11,
+		            "rank":9
+		        },
+		        {
+		            "hc-key": "cn-qh",
+		            "z": 12,
+		            "rank":10
+		        }
+		    ];
+
+		    // Initiate the chart
+		    $('#container3').highcharts('Map', {
+	            
+		        title : {
+		            text : ''
+		        }
+
+		        ,credits: {
+		        	enabled:false,
+	            	text: 'iClick.com',
+	            	href: 'http://www.i-click.com'
+	        	},
+		        mapNavigation: {
+		            enabled:true
+		        },
+				legend: {
+		            enabled: false
+				},
+				series : [{
+		                mapData: Highcharts.maps['countries/cn/custom/cn-all-sar-taiwan'],
+		                color: '#F74845',
+		                enableMouseTracking: false
+		            }, {
+		                type: 'mapbubble',
+		                mapData: Highcharts.maps['countries/cn/custom/cn-all-sar-taiwan'],
+		                color: '#F74845',
+		                name: 'Location Details',
+		               	joinBy: ['hc-key','hc-key'],
+		                data: data,
+		                minSize: 6,
+		                maxSize: '12%',
+		                
+		                tooltip: {
+		                    pointFormat: '{point.name} | Ranking: {point.rank} <br> Audience(%):{point.z}% '
+		                }
+		            }]
+		       
+		    });
+    	})
+	
+    </script>
+</html>

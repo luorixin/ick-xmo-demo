@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>客户管理</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Cache-Control" content="no-store" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1"/>
+	 <link rel="stylesheet" type="text/css" href="css/bootstrap-xmo.css">
+  
+	
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/offcanvas.css">
+
+
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+	
+</head>
+    <body>
+    	<script type="text/javascript">
+    		var strStoreDate = window.localStorage? localStorage.getItem("menu-display"): Cookie.read("menu-display");
+		      if(strStoreDate && strStoreDate=="hide"){
+		          $("body").addClass("x-hide");
+		      }
+    	</script>
+    	<!--头部-->
+    	<div class="myheading">
+			<nav class="navbar navbar-inverse">
+				<div class="x-navbar">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed my-collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+						<a href="#" class="navbar-brand" data-toggle="offcanvas">
+							<img src="images/logo1.png" alt="" style="width:118px">
+						</a>
+					</div>
+						
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">	
+						 <div class="x-top-menu" >
+							<ul class="nav navbar-nav">
+								<li ><a href="#">Home</a></li>
+								<li ><a href="#">Agencies</a></li>
+								<li><a href="./index.html">Advertisers</a></li>
+								<li class="selected"><a href="./Campaigns.html">Campaigns</a></li>
+								<li>
+									<a href="#">Library</a>
+									<ul class="dropdown-top-menu" aria-labelledby="dropdownMenu1">
+									    <li><a href="./Tracking.html">Tracking</a></li>
+									    <li><a href="./Audience.html">Audience</a></li>
+									    <li><a href="./AdCreative.html">Ad Creatives</a></li>
+									    <li><a href="./AdPlacement.html">Ad Placements</a></li>
+									  </ul>
+								</li>
+								<li><a href="./Report.html">Reports</a></li>
+								<li><a href="./Tools.html">Tools</a></li>
+							</ul>
+							
+						</div>
+						<!-- Single button -->
+						<div class="x-user-main  navbar-right ">
+							<div class="x-user-con">
+									<span class="glyphicon glyphicon-user x-user "></span>
+									<span class="x-user-dis">Admin:<br/>Shirely.admin<br/> </span>
+									<span class="glyphicon glyphicon-triangle-bottom x-user-arrow"></span>
+							</div>
+							<ul class="x-user-list">
+								<li >
+									<span class="iclick-ico"></span>
+									<a class="x-user-config" href="./Platform_setting.html">Platform Setting</a>
+								</li>
+								<li >
+									<span class="glyphicon glyphicon-cog"></span>
+									<a class="x-user-config" href="./Account_setting.html">Account Settings</a>
+								</li>
+								<li >
+									<span class="glyphicon glyphicon-log-out"></span>
+									<a class="x-user-config" href="#">Logout</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="x-user-con navbar-right x-bell">
+							<span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+							<span class="x-tip">6</span>
+						</div>
+						
+						<div class="navbar-form navbar-right" >
+							
+						       
+						        <span class="x-lang-en selected"></span>
+						        <span class="x-lang-ch"></span>
+						      </div>
+					</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<!--左边栏-->
+    	<div class="x-main">
+			<div class="x-nav row row-offcanvas row-offcanvas-left">
+    			<div class="sidebar-offcanvas x-left">
+    				<div class="x-left-title">
+					  	<p>Selected advertiser</p>
+					  	<h1>iClick</h1>
+					</div>
+
+					<div class="x-left-search">
+						<div class="x-search-title"><label>Change accounts</label></div>
+						<div class="x-search-search">
+							<input class="input-search" placeholder="Search advertisers"/>
+						</div>
+					</div>
+					<div class="x-left-content">
+						<ul>
+							<li><a href="#">iClick</a></li>
+							<li><a href="#">碍事梨OTV投放9月</a></li>
+							<li><a href="#">牛栏奶粉</a></li>
+							<li><a href="#">济南底层</a></li>
+							<li><a href="#">克尔瑞济南底层</a></li>
+							<li><a href="#">库克</a></li>
+							<li><a href="#">按皮饮信息科技（北京）有些公司</a></li>
+							<li><a href="#">Grammarly</a></li>
+							<li><a href="#">蘑菇街</a></li>
+							<li><a href="#">雅诗兰黛旅游零售</a></li>
+							<li><a href="#">海蓝之谜旅游零售</a></li>
+							<li><a href="#">MeadJohnson</a></li>
+							<li><a href="#">华帝9月</a></li>
+							<li><a href="#">风衣的那个</a></li>
+							<li><a href="#">米其林投资有限公司</a></li>
+							<li><a href="#">精工</a></li>
+						</ul>
+					</div>
+					
+				</div>
+	    		
+		    	<div class="x-body">
+
+					<div class="x-show-control"></div>
+
+					
+					<div class="x-body-container">
+						 <!-- Page title -->
+						<div class="page-title">
+						  <div id="breadcrumb" class="x-row">
+						    <!-- Top left headings and links -->
+						    <div class="client-row">
+						      
+						      <div class="x-row"><span class="content_name_12">Campagins</span>
+								<span class="content_name_12"> > Create a new Campagins</span>
+						      </div>
+								<div class="x-row"><div class="client-row"><h2>Create a new Campagins</h2></div></div>
+						    </div>
+						    
+						    </div>
+						  
+						  
+						</div>
+						 <!-- Page title -->
+
+						 <!-- step line -->
+						 <div class="step-line">
+						 	<div class="steps">
+					            <div class="wrap">
+					              <div class="current">
+					                <label><span class="round">1</span><span>Product Selection</span></label>
+					              </div>
+					            </div>
+				            	<div class="wrap-line">
+				           			<label><span>———</span></label>
+				           		</div>
+					            <div class="wrap">
+					              <div class="todo">
+					                <label><span class="round">2</span><span>Basic Settings</span></label>
+					              </div>
+					            </div>
+					             <div class="wrap-line">
+				           			<label><span>———</span></label>
+				           		</div>
+					            <div class="wrap">
+					              <div class="todo">
+					                <label><span class="round">3</span><span>Update Creatives</span></label>
+					              </div>
+					            </div>
+					            <div class="wrap right">
+					            	<div class="last">
+					            		<label class="switch" for="switch-input">
+											<input type="checkbox" checked="">
+											<span class="switch-left"></span>
+											<i class="controller"></i>
+											<span class="switch-right"></span>
+										</label>
+					            	</div>
+					            </div>
+					            <div class="wrap right">
+					            	<div>
+					            		<label>Activate this paln</label>
+					            	</div>
+					            </div>
+					        </div>
+						 </div>
+
+						<!-- step line -->
+
+						
+						<div class="edit-container">
+							<form class="form-horizontal">
+								<h3 class="">Product Selection</h3>
+								<div class="control-group">
+									<div class="clearfix">
+									    <div class="share_box_dl radius_10" id="share_media_buy_left">
+									   <div class="pull-left w-25">
+									      <dl class="share_box_campaign campaign radius_10" id="sem_marketing">
+									        <a href="/en/campaigns/new?campaigntype=SEM&amp;client_id=707" class="share_box_name icon-title"><dt>SEM</dt></a>
+									        <a class="icon_sem_off_on icons_pub" href="/en/campaigns/new?campaigntype=SEM&amp;client_id=707">
+									          <span></span></a>
+									      </dl>
+									  </div>
+									  <div class="pull-left w-25">
+									      <dl class="share_box_campaign campaign share_box_campaign_disable radius_10" id="video_launch">
+									        <a href="#" style="cursor:not-allowed" class="share_box_name icon-title"><dt>Video<span class="black-icon" style="overflow:visible">Beta</span></dt></a>
+									        <a style="cursor:not-allowed" class="icon_video_off_on icons_pub" href="#"><span></span></a>
+
+									      </dl>
+									      </div>
+									      <div class="pull-left w-25">
+									      <dl class="share_box_campaign campaign radius_10" id="super_campaign">
+									        <a href="/en/pretargetings/new_quality_media?client_id=707" class="share_box_name icon-title"><dt>Operated Premium Network</dt></a>
+									        <a class="icon_operated_premium_off_on icons_pub" href="/en/pretargetings/new_quality_media?client_id=707"><span></span></a>
+									      </dl>
+									  </div>
+									  <div class="pull-left w-25">
+									      <dl class="share_box_campaign campaign radius_10" id="social_media">
+									        <a href="/en/pretargetings/new_gdt?client_id=707" class="share_box_name icon-title"><dt>Social Media</dt></a>
+									        <a class="icon_socialmedia_off_on icons_pub" href="/en/pretargetings/new_gdt?client_id=707"><span></span></a>
+									      </dl>
+									     </div>
+									    </div>
+									    <div class="share_box_dl radius_10" id="share_media_buy_left">
+									    	<div class="pull-left w-25">
+									      <dl class="share_box_campaign campaign radius_10" id="ad_exchange">
+									        <a href="/en/pretargetings/new_bshare?client_id=707" class="share_box_name icon-title"><dt>Ad Exchange</dt></a>
+									        <a class="icon_dsp_off_on icons_pub" href="/en/pretargetings/new_bshare?client_id=707"><span></span></a>
+									        
+									      </dl>
+									  </div>
+									  <div class="pull-left w-25">
+									      <dl class="share_box_campaign campaign radius_10" id="advertisement_network">
+									        <a href="/en/pretargetings/new?client_id=707" class="share_box_name icon-title"><dt>Ad Network</dt></a>
+									        <a class="icon_adnetwork_off_on icons_pub" href="/en/pretargetings/new?client_id=707"><span></span></a>
+									      </dl>
+									     </div>
+									     <div class="pull-left w-25">
+									      <dl class="share_box_campaign campaign radius_10" id="media_purchase">
+									        <a href="/en/campaigns/new?campaigntype=DISPLAY&amp;client_id=707" class="share_box_name icon-title"><dt>Direct Publisher</dt></a>
+									        <a class="icon_dpublisher_off_on icons_pub" href="/en/campaigns/new?campaigntype=DISPLAY&amp;client_id=707"><span></span></a>
+									      </dl>
+									  </div>
+									  <div class="pull-left w-25">
+									      <dl class="share_box_campaign campaign radius_10" id="mobile_network">
+									        <a href="/en/campaigns/new?campaigntype=MOBILE&amp;client_id=707" class="share_box_name icon-title"><dt>Mobile Network</dt></a>
+									        <a class="icon_mnetwork_off_on icons_pub" href="/en/campaigns/new?campaigntype=MOBILE&amp;client_id=707"><span></span></a>
+									      </dl>
+									     </div>
+									    </div>
+									  </div>
+								</div>
+							</form>
+						</div>
+						
+				</div>
+			</div>  
+		</div>
+		<div class="clear"></div>
+			<div class="x-nav row row-offcanvas row-offcanvas-left">
+			<div class="sidebar-offcanvas"></div>
+			<div class="myfooter">
+					© 2009 - 2015 iClick Interactive Asia Limited. All Rights Reserved. 
+			</div>
+		</div>
+    </body>
+    <script type="text/javascript">
+		$(".switch").click(function(){
+    		if($(this).hasClass("switch-disable-ing") ){
+    			$(this).removeClass("switch-disable-ing");
+    			$(this).find("input").attr("checked",true);
+    		}else{
+    			$(this).addClass("switch-disable-ing");
+    			$(this).find("input").attr("checked",false);
+    		}
+    			
+    	})
+    	
+    </script>
+</html>

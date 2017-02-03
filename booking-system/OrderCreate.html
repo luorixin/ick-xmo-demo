@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>客户管理</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Cache-Control" content="no-store" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1"/>
+	 <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+  
+	
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="http://xmostg.optimix.asia/stylesheets/xmo/application.css?9350">
+	<link rel="stylesheet" type="text/css" href="http://xmostg.optimix.asia/stylesheets/xmo/xmo_components.css?9350">
+	<link rel="stylesheet" type="text/css" href="stylesheets/chosen/chosen.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/calendar/xmo-calendar.css">
+
+	<link rel="stylesheet" type="text/css" href="js/layer/skin/layer.css">
+	<link rel="stylesheet" type="text/css" href="css/my_layer.css">
+	
+
+
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.tooltip.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-tooltip.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/chosen.jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.dataTables.1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.xmo_tooltips.js"></script>
+	<script type="text/javascript" src="js/xmo-calendar.js"></script>
+	 <script type="text/javascript" src="js/layer/layer.min.js"></script>
+</head>
+    <body>
+    	<div class="container">
+	    	<!--头部-->
+	    	<div class="myheading">
+				<nav class="navbar navbar-inverse">
+					<div class="x-navbar">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							
+							<a href="#" class="navbar-brand" data-toggle="offcanvas">
+								<img src="images/logo1.png" alt="" style="width:118px">
+							</a>
+						</div>
+							
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">	
+							<!-- Single button -->
+							<div class="x-user-main x-search">
+										
+								<label class="x-main-title">销售管理系统</label>
+								
+							</div>
+
+							 <div class="x-top-menu" >
+								<ul class="nav navbar-nav">
+									
+									<li class="selected"><a href="./index.html">我的订单</a></li>
+									<li><a href="./Campaigns.html">我的客户</a></li>
+									<li><a href="./Campaigns.html">售前预览</a></li>
+									<li>
+										<a href="#">后台管理</a>
+										
+										<ul class="dropdown-top-menu" aria-labelledby="dropdownMenu1">
+											<span class="nav-arrow"></span>
+										    <li><a href="./Tracking.html">产品</a>
+										    	
+										    </li>
+										    <li><a href="./Tracking.html">渠道</a>
+										    	
+										    </li>
+										    <li><a href="./AdCreative.html">流程通知</a></li>
+										    <li><a href="./Audience.html">用户</a>
+												<ul class="sub-top-menu ">
+										    		<li><a href="#">用户</a></li>
+										    		<li><a href="#">用户群组</a></li>
+										    	</ul>	
+										    	<span class="caret-right"></span>
+										    </li>
+										  </ul>
+									</li>
+								</ul>
+								
+							</div>
+							<!-- Single button -->
+							<div class="x-user-main  navbar-right ">
+								<div class="x-user-con">
+									<!--
+										<img class="x-user " src="https://git.bznx.net/assets/logo-white-ed4a8c29c69c582954818a833b737e7a.png">
+									-->
+										<span class="x-user-dis">Admin:&nbsp;&nbsp;Shirely.admin<br/> </span>
+										<span class="x-user-arrow icon-dropdown"></span>
+								</div>
+
+								<ul class="x-user-list">
+									<span class="nav-arrow"></span>
+									<li >
+										<a class="x-user-config" href="./Platform_setting.html">
+											<span class="icon_accountsetting icon_setting"></span>
+											Platform Setting</a>
+									</li>
+									<li >
+										
+										<a class="x-user-config" href="./Account_setting.html">
+											<span class="icon_password icon_setting"></span>Account Settings</a>
+									</li>
+									<li >
+										
+										<a class="x-user-config" href="#">
+											<span class="icon_logout icon_setting"></span>
+											Logout</a>
+									</li>
+								</ul>
+							</div>
+
+						
+							
+							<div class="navbar-form navbar-right" >
+								
+							       
+							        <span class="x-lang-en selected"></span>
+							        <span class="x-lang-ch"></span>
+							      </div>
+						</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<!--左边栏-->
+    		<div class="page_title">
+			  <div id="breadcrumb" class="row">
+			    <!-- Top left headings and links -->
+			    <div class="client-row">
+			      
+			     <span class="content_name_12">我的订单 > </span>
+			     <span class="content_name_12">新增订单</span>
+			    </div>
+			    
+			    
+			  </div>
+
+			  <!-- Page title -->
+			  
+			   <div class="row"><div class="client-row"><h1>新增订单</h1></div></div>
+			</div>
+
+			<div class="row"></div>
+			<div class="big_section">
+				<form class="form-horizontal">
+					<div class="control-group">
+					    <label class="control-label">
+					      订单编号
+					    </label>
+					    <div class="controls">
+					      <div class="row ">
+					        <div class="item_two_column">
+					          <div class="span">
+					                <select class="select" id="campaign_order_code" name="campaign[order_code]" style="width: 361px; ">
+					                	<option value="">123</option>
+										<option value="">321</option>
+									</select>
+					          </div>
+					      	</div>
+					    	</div>
+					  	</div>
+					 </div>
+
+					  <div class="control-group">
+				        <label class="control-label">
+				          <label class="inline" for="campaign_campaignname">订单名称</label></label>
+				        <div class="controls">
+				          <div class="row ">
+				            <div class="item_two_column">
+				              <div class="span">
+				                <input class="span5 required" disname="订单名称" size="30" style="width:351px;" type="text">
+				              </div>
+				            </div>
+				          </div>
+				        </div>
+				      </div>
+
+				      <div class="control-group">
+					    <label class="control-label">
+					      客户名称*
+					    </label>
+					    <div class="controls">
+					      <div class="row ">
+					        <div class="item_two_column">
+					          <div class="span">
+					                <select class="select" style="width: 361px; ">
+					                	<option value="">123</option>
+										<option value="">321</option>
+									</select>
+					          </div>
+					          <div class="span add-new-link" style="padding-left: 28px;background-position-x: 8px;">
+				                  <a href="/en/frequency_cap_groups/new?client_id=1247">新增客户</a>
+				                </div>
+					      	</div>
+					    	</div>
+					  	</div>
+					 </div>
+
+					 <div class="control-group">
+					    <label class="control-label">
+					      所属行业*
+					    </label>
+					    <div class="controls">
+					      <div class="row ">
+					        <div class="item_two_column">
+					          <div class="span">
+					                <select class="select"  style="width: 361px; ">
+					                	<option value="">123</option>
+										<option value="">321</option>
+									</select>
+					          </div>
+					      	</div>
+					    	</div>
+					  	</div>
+					 </div>
+
+					  <div class="control-group">
+				        <label class="control-label">
+				          <label class="inline" for="campaign_campaignname">客户联络人</label></label>
+				        <div class="controls">
+				          <div class="row ">
+				            <div class="item_two_column">
+				              <div class="span">
+				                <input class="span5 required" disname="客户联络人" disabled size="30" style="width:351px;" type="text">
+				              </div>
+				            </div>
+				          </div>
+				        </div>
+				      </div>
+
+				       <div class="control-group">
+				        <label class="control-label">
+				          <label class="inline" for="campaign_campaignname">联络人电话</label>
+				      </label>
+				        <div class="controls">
+				          <div class="row ">
+				            <div class="item_two_column">
+				              <div class="span">
+				                <input class="span5 required" disname="联络人电话" size="30" style="width:351px;" type="text">
+				              </div>
+				            </div>
+				          </div>
+				        </div>
+				      </div>
+
+				      <div class="sub_section_white">
+				      		<div class="control-group">
+					          <label class="control-label">日期*</label>
+					          <div class="controls ">
+					            <div class="row">
+					                <div class="row ">
+									    <div class="span">
+									      <div class="input-append">
+									        
+										      <input class="span2 required xmoCalendarInputSchedule" id="appendedInput" name="date_range" type="text" value="" dis_zone="0">
+										      
+										      <input type="hidden" class="exclude_dates" name="exclude_dates" value="">
+										      <span class="add-on"><i class="icon-calendar icon_trigger r_margin_0"></i></span>
+										      </div>
+										    </div>
+									  </div>
+						         </div>
+				            	<div class="row">
+					              <div class="span">
+						                <label class="sub_txt">
+						                  总天数
+						                  :&nbsp;&nbsp;<span id="total_days">N/A</span>
+						                  天
+						                  &nbsp;|&nbsp;
+						                  剩余时间
+						                  :&nbsp;&nbsp;<span id="remaining_days">N/A</span>
+						                  天
+						                </label>
+						              </div>
+						            </div>
+						          </div>
+						        </div>
+
+						     <div class="control-group">
+						          <label class="control-label">
+						            预算*
+						          </label>
+						          <div class="controls">
+						            <div class="row">
+						              <div class="item_two">
+						                <div class="span" style="padding-left:0px">
+						                  <div class="input-append">
+						                    <input type="text" id="budget_dis_input" style="width:280px;" class="align_right numeric" name="amount">
+						                    
+						                    <span class="add-on currency_unit_budget">
+						                    <select class="required span2 select-inside">
+							                    <option value="1">HKD</option>
+												<option value="2" selected="selected">RMB</option>
+												<option value="3">USD</option>
+												<option value="4">SGD</option>
+												<option value="5">TWD</option>
+												<option value="6">KRW</option>
+												<option value="8">JPY</option>
+												<option value="9">MYR</option>
+												<option value="10">GBP</option>
+												<option value="11">EUR</option>
+												<option value="12">AUD</option>
+												<option value="13">THB</option>
+												<option value="14">RUB</option>
+												<option value="15">IDR</option>
+											</select>
+											</span>
+						                  </div>
+						                </div>
+						              </div>
+						            </div>
+						      </div>
+						  </div>
+
+					      <div class="control-group">
+					      	<label class="control-label">
+						      <label  class="inline" for="">赠送单</label>
+						    </label>
+						    <label class="radio-inlie" style="margin-left:36px;width:20px">
+						      <input type="radio" name="order_report_type" id="optionsRadios1" value="1" checked="">是
+						    </label>
+						    <input type="text" class="span2" for="optionsRadios1" style="width:300px;float:left;" placeholder="请填写订单赠送原因，例如：媒体返量赠送订单；单独赠送订单"/>
+						     <label class="radio-inlie" style="margin-left:36px">
+						      <input type="radio" name="order_report_type" id="optionsRadios1" value="1" checked="">否
+						    </label>
+					      </div>
+
+					      <div class="control-group">
+					      	<label class="control-label">
+						      <label  class="inline" for="">地域*</label>
+						    </label>
+						    <div class="controls">
+						    	<div class="row">
+						          <div class="span">
+						            国家
+						          </div>
+						        </div>
+						        <div class="row">
+					              <div class="item_two selection">
+					              <div class="span">
+					                <select data-placeholder="请选择" style="width: 361px; " class="select">
+					                    <option value="1156310000">中国</option>
+					                    <option value="1156530000">海外</option>
+					                   
+					                </select>
+					              </div>
+					              <div class="span">
+					                <a class="selection_icon country_select_icon delivery_provinces" href="javascript:void(0);"></a>
+					              </div>
+					              </div>
+					            </div>
+
+						    </div>
+					      </div>
+
+
+					       <div class="control-group">
+						      	<label class="control-label">
+							      <label  class="inline" for="">产品</label>
+							    </label>
+							    <div class="controls">
+							    	<div class="row" style="padding-left:20px;">
+							    		<div class="pull-left plus-button" style="margin-left:0px;"><a href="javascript:;" onclick="addProduct()"><i class="plus-ico"></i><span>产品</span></a>
+							    		</div>
+							    	</div>
+							    	<div class="row">
+							    		<div class="table_white">
+							    			<table id="paid_search_data" class="table table-striped table-bordered table-condensed t_padding_0" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+							    			 <thead>
+											      <tr class="even">
+											        <th class="align_left align_top">操作</th>
+											        <th class="align_left align_top">产品</th>
+											        <th class="align_left align_top">产品类型</th>
+											        <th class="align_left align_top">预算分配</th>
+											        <th class="align_left align_top">卖价</th>
+											        <th class="align_left align_top">折扣</th>
+											        <th class="align_left v_align_middle">地域预算</th>
+											        <th class="align_left v_align_middle">分配价格说明</th>
+											        <th class="align_left v_align_middle">非标准KPI</th>
+											      </tr>
+											    </thead>
+											    <tbody>
+											    <tr class="odd">
+										            
+										             <td class="align_center sorting_1">
+										              <span data-position="right" data-offset="left_0" class="xmo-tooltip l_margin_0 l_padding_5" data-id="a07843974591232836">
+										                <i class="icon-setup">
+										                  <div class="popover xmo-popover fade in">
+										                    <div class="arrow"></div>
+										                    <div class="popover-inner xmo-popover-inner">
+										                      <div class="popover-content">
+										                       		                    
+										                    	</div>
+										                      </div>
+										                    </div>
+										                </i>
+										              </span>
+										            </td>
+										            <td class="align_left">中国大陆一线城市OTV30秒</td>
+										            <td class="align_left">PC-OTV(30s)</td>
+										             <td class="align_right">RMB 50.00</td>
+										            <td class="align_right">CPM RMB 50.00</td>
+										            <td class="align_right">50.00%</td>
+										            <td class="align_right">北京:30.00%<br>广州:70.00</td>
+										            <td class="align_left">-</td>
+										            <td class="align_left">-</td>
+										        </tr>
+										         <tr class="even">
+										            
+										             <td class="align_center sorting_1">
+										              <span data-position="right" data-offset="left_0" class="xmo-tooltip l_margin_0 l_padding_5" data-id="a07843974591232836">
+										                <i class="icon-setup">
+										                  <div class="popover xmo-popover fade in">
+										                    <div class="arrow"></div>
+										                    <div class="popover-inner xmo-popover-inner">
+										                      <div class="popover-content">
+										                       		                    
+										                    	</div>
+										                      </div>
+										                    </div>
+										                </i>
+										              </span>
+										            </td>
+										            <td class="align_left">中国大陆一线城市OTV30秒</td>
+										            <td class="align_left">PC-OTV(30s)</td>
+										            <td class="align_right">RMB 50.00</td>
+										            <td class="align_right">CPM RMB 50.00</td>
+										            <td class="align_right">50.00%</td>
+										            <td class="align_right">北京:30.00%<br>广州:70.00</td>
+										            <td class="align_left">-</td>
+										            <td class="align_left">-</td>
+										        </tr>
+										         <tr class="odd">
+										            
+										             <td class="align_center sorting_1">
+										              <span data-position="right" data-offset="left_0" class="xmo-tooltip l_margin_0 l_padding_5" data-id="a07843974591232836">
+										                <i class="icon-setup">
+										                  <div class="popover xmo-popover fade in">
+										                    <div class="arrow"></div>
+										                    <div class="popover-inner xmo-popover-inner">
+										                      <div class="popover-content">
+										                       		                    
+										                    	</div>
+										                      </div>
+										                    </div>
+										                </i>
+										              </span>
+										            </td>
+										            <td class="align_left">中国大陆一线城市OTV30秒</td>
+										            <td class="align_left">PC-OTV(30s)</td>
+										            <td class="align_right">RMB 50.00</td>
+										            <td class="align_right">CPM RMB 50.00</td>
+										            <td class="align_right">50.00%</td>
+										            <td class="align_right">北京:30.00%<br>广州:70.00</td>
+										            <td class="align_left">-</td>
+										            <td class="align_left">-</td>
+										        </tr>
+										    </tbody>
+										</table>
+							    		</div>
+							    	</div>
+							    </div>
+							</div>
+				     </div>
+
+				     <h2 class="l_padding_20 t_padding_10 b_padding_10 no-border" style="text-decoration: underline;" data-toggle="collapse" data-target="#advanced_setting">
+					    <strong>进阶设置</strong><i class="icon-arrow-right icon-arrow-down"></i>
+					  </h2>
+					  <div class="b_padding_0 t_padding_5">
+					  		<div class="in collapse">
+					  			<div class="control-group">
+								    <label class="control-label" for="audience_name">转化目标</label>
+								    <div class="controls ">
+								      <div class="row">
+								        <div class="span">
+								          <textarea class="input-xxlarge "style="width:361px" cols="20" rows="8"></textarea>
+								        </div>
+								        <div class="span underlined l_margin_10">
+                          
+				                         <span class="xmo-tooltip" data-position="right" data-width="300" >
+				                         	<i class="icon-help r_margin_0" style="height:150px;"></i>
+				                         	<div class="popover xmo-popover fade in">
+				                         		<div class="arrow"></div><div class="popover-inner xmo-popover-inner">
+				                         		<div class="popover-content">追踪代码记录的参数。例如订单编号，订单金额等
+				                         		</div>
+				                         		</div>
+				                         	</div>
+				                         </span>
+				                        </div>
+								      </div>
+								      
+								    </div>
+							    </div>
+
+							    <div class="control-group">
+								    <label class="control-label" for="audience_name">购买人群</label>
+								    <div class="controls ">
+								      <div class="row">
+								        <div class="span">
+								          <textarea class="input-xxlarge "style="width:361px" placeholder="例如：人群特征，兴趣爱好" cols="20" rows="8"></textarea>
+								        </div>
+								       
+								      </div>
+								      
+								    </div>
+							    </div>
+
+							    <div class="control-group">
+							      	<label class="control-label">
+								      <label  class="inline" for="">添加第三方监测</label>
+								    </label>
+								    <label class="radio-inlie" style="margin-left:36px;">
+								      <input type="radio" name="radio2" id="optionsRadios1" value="1" checked="">是
+								    </label>
+								    
+								     <label class="radio-inlie" style="margin-left:36px">
+								      <input type="radio" name="radio2" id="optionsRadios1" value="1" checked="">否
+								    </label>
+							   </div>
+
+						      <div class="control-group">
+								    <label class="control-label" for="audience_name">网站黑名单<br>(最多500个)</label>
+								    <div class="controls ">
+								    	<div class="row">
+								          <div class="span">
+								            *以下网站将不会投放
+								          </div>
+								        </div>
+								      <div class="row">
+								        <div class="span">
+								          <textarea class="input-xxlarge "style="width:361px" placeholder="一个URL占一行" cols="20" rows="8"></textarea>
+								        </div>
+								       	 <div class="span underlined l_margin_10">
+                          
+				                         <span class="xmo-tooltip" data-position="right" data-width="300" >
+				                         	<i class="icon-help r_margin_0" style="height:150px;"></i>
+				                         	<div class="popover xmo-popover fade in">
+				                         		<div class="arrow"></div><div class="popover-inner xmo-popover-inner">
+				                         		<div class="popover-content">追踪代码记录的参数。例如订单编号，订单金额等
+				                         		</div>
+				                         		</div>
+				                         	</div>
+				                         </span>
+				                        </div>
+								      </div>
+								      <div class="row">
+								          <div class="span">
+								           网站总数：0/500
+								          </div>
+								        </div>
+								      
+								    </div>
+							    </div>
+
+							    <div class="control-group">
+							      	<label class="control-label">
+								      <label  class="inline" for="">共享到销售</label>
+								    </label>
+								    <div class="controls">
+								      <div class="row">
+							              <div class="item_two selection">
+							              <div class="span">
+							                <select data-placeholder="请选择" style="width: 361px; " class="select">
+							                    <option value="1156310000">中国</option>
+							                    <option value="1156530000">海外</option>
+							                   
+							                </select>
+							              </div>
+							              <div class="span">
+							                <a class="selection_icon country_select_icon delivery_provinces" href="javascript:void(0);"></a>
+							              </div>
+							              </div>
+							            </div>
+								  	</div>
+								    
+							   </div>
+					  		</div>
+					  </div>
+					  <div class="row t_margin_20">
+					      <div class="button_area">
+					      <div class="">
+					        
+					        <div class="outer_cancel"><button type="button" onclick="window.history.back();">取消</button></div>
+					        <div class="outer_submit">
+					          
+					          <input value="保存及预览" type="button" class="submit_tag_button" onclick="doSub()">
+					        </div>
+					      </div>
+					      </div>
+					    </div>
+				</form>
+			</div>
+				
+		</div>
+
+
+		<div class="clearfooter"></div>
+			<div class="myfooter">
+			    <label class="x-footer">
+			      Copyright © 2015  iClick Interactive Asia Limited. All Rights Reserved.
+			        <span>| <a target="_blank" href="/zh-cn/admin/send_file_upload_release_notes">产品更新日志
+			        </a></span>
+			      <span>| <a target="_blank" href="/templates/xmo_help.pdf" onclick="_xmoIstag1();">幫助中心</a></span>
+			      <span>| <a href="/zh-cn/privacy_policy">隐私声明</a></span>
+			    </label>
+			    <label class="x-footer">10.1.1.63 v9.26.0(建议采用浏览器: Internet Explorer 8.0 and 9.0, Chrome 8.0+, Firefox 3.5+, Safari 1.0+, Opera V11+.)</label>
+			  </div>
+
+
+		<div id="upload_layer_parent">
+	    <div id="upload-box" style="display:none">
+	    	 <form class="form-horizontal">
+	    	 	<div class="row font_28">产品</div>
+	    	 	<div class="control-group l_padding_0">
+			      <label class="control-label">
+			          <label for="campaign_campaignname" class="inline">产品类别</label>
+			      </label>
+			      <div class="controls">
+			        <div class="row">
+			          <div class="span">
+			            <select data-placeholder="请选择" style="width: 338px; " class="select">
+		                    <option value="1156310000">中国</option>
+		                    <option value="1156530000">海外</option>
+		                   
+		                </select>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+
+			    <div class="control-group l_padding_0">
+			      <label class="control-label">
+			          <label for="campaign_campaignname" class="inline">产品</label>
+			      </label>
+			      <div class="controls">
+			        <div class="row">
+			          <div class="span">
+			            <select data-placeholder="请选择" style="width: 338px; " class="select">
+		                    <option value="1156310000">中国</option>
+		                    <option value="1156530000">海外</option>
+		                   
+		                </select>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+
+			    <div class="control-group l_padding_0">
+			      <label class="control-label">
+			        预算分配
+			      </label>
+			      <div class="controls">
+			        <div class="row">
+			          <div class="item_two">
+			            <div class="span5">
+			              <div class="input-append">
+			                <input class="number  required" dis_wiget="#pretargeting_bonus" dis_zone="0" disname="预算分配" size="30" style="width:302px" type="text" value="0">
+			                <span class="add-on currency_unit_budget">%</span>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+			        <div class="row">
+			          <div class="span">
+			          	<label class="sub_txt">
+			            <span style="color:#333;">刊例价：RMB</span>
+			            <span style="color:#333;margin-left:40px;">最低卖价：RMB
+			            </span>
+			            </label>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+
+
+			    <div class="control-group l_padding_0">
+			      <label class="control-label">
+			        卖价
+			      </label>
+			      <div class="controls">
+			            <div class="row ">
+			              <div class="item_two_column">
+			                <div class="span" style="width:120px;">
+			                  <select class="required span2 valid" >
+			                  	<option value="1" selected="selected">CPC</option>
+								<option value="2">CPM</option>
+								<option value="3">CPL</option></select>
+			                </div>
+			                <div class="span">
+			                  <div class="input-append">
+			                    <input type="text" id="dis_sell_price" class="number number_requiest novalidate " association_id="sell_price" style="width:172px">
+			                    <input class="align_right numeric required" dis_wiget="#dis_sell_price" disname="单价" id="campaign_sell_price" name="campaign[sell_price]" size="30" style="display:none" type="text">
+
+			                    <span class="add-on currency_unit">RMB</span>
+			                  </div>
+			                </div>
+			                
+			              </div>
+			            </div>
+			            <div class="row">
+				          <div class="span">
+				          	<label class="sub_txt">
+				            <span style="color:#333;">点击量：RMB</span>
+				            <span style="color:#333;margin-left:15px;">预估CTR：%
+				            </span>
+				            <span style="color:#333;margin-left:15px;">预估CPM：
+				            </span>
+				            <span style="color:#333;margin-left:15px;">预估提示量
+				            </span>
+				            </label>
+				          </div>
+				        </div>
+			          </div>
+			    </div>
+
+			    <div class="control-group l_padding_0">
+			      <label class="control-label">
+			        折扣
+			      </label>
+			      <div class="controls">
+			        <div class="row">
+			          <div class="item_two">
+			            <div class="span5">
+			              <div class="input-append">
+			                <input class="number  required" dis_wiget="#pretargeting_bonus" dis_zone="0" disname="折扣" size="30" style="width:302px" type="text" value="0">
+			                <span class="add-on currency_unit_budget">%</span>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+			    </div>
+			</div>
+
+			    <div class="control-group l_padding_0">
+			      	<label class="control-label">
+				      <label  class="inline" for="">地域预算分配</label>
+				    </label>
+				    <div class="controls">
+				    	<div class="row" style="padding-left:20px;">
+				    		<input type="checkbox" checked/>
+				    	</div>
+				    	<div class="row"  style="padding-left:20px;">
+				    		<div class="table_white">
+				    			<table id="yusuan" class="table table-striped table-bordered table-condensed t_padding_0" cellpadding="0" cellspacing="0" border="0" style="width:300px;">
+				    			 <thead>
+								      <tr class="even">
+								        <th class="align_left align_top">地域</th>
+								        <th class="align_left align_top">展示量</th>
+								        <th class="align_left align_top">预算(RMB)</th>
+								        <th class="align_left align_top">预算分配(%)</th>
+								      </tr>
+								    </thead>
+								  
+								   </table>
+							 </div>
+						</div>
+					</div>
+				</div>
+
+					<div class="control-group l_padding_0">
+					    <label class="control-label" for="audience_name">价格说明</label>
+					    <div class="controls ">
+					      <div class="row">
+					        <div class="span">
+					          <textarea class="input-xxlarge "style="width:338px" placeholder="如折后卖价地域最低限价，请说明" cols="20" rows="8"></textarea>
+					        </div>
+					       
+					      </div>
+					      
+					    </div>
+				    </div>
+
+				    <div class="control-group l_padding_0">
+					    <label class="control-label" for="audience_name">非标准KPI</label>
+					    <div class="controls ">
+					      <div class="row">
+					        <div class="span">
+					          <textarea class="input-xxlarge "style="width:338px" placeholder="处理销售政策的KPI意外，客户如有要求其他KPI，需填写此项" cols="20" rows="8"></textarea>
+					        </div>
+					      </div>
+					      	<div class="row">
+					          <div class="span">
+					            <label class="sub_txt" style="color:#fd9827">
+					            	注意：填写非标准KPI之后，此订单会先经过策划人员的核对。
+					            </label>
+					          </div>
+					        </div>
+					    </div>
+				    </div>
+
+				    <div class="row ">
+				      <div class="button_area" id="gdt_update_button">
+				      	<div class="outer_cancel">
+				          <input class="cancel" type="button" value="取消" id="cancel_ad_button" onclick="hide_edit_form();">
+				        </div>
+				        <div class="outer_submit">
+				          <input class="submit" type="submit" value="保存" id="upload_ad_button">
+				        </div>
+				        
+				      </div>
+				    </div>
+	    	 </form>
+			
+
+	    </div>
+    </div>
+    </body>
+    <script type="text/javascript">
+    	initTable();
+    	function initTable(){
+    		 var tables =$('#paid_search_data').dataTable({
+    			"oLanguage":{
+					"sProcessing":   "处理中...",
+					"sLengthMenu":   "显示 _MENU_ 项结果",
+					"sZeroRecords":  "没有匹配结果",
+					"sInfo":         "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+					"sInfoEmpty":    "显示第 0 至 0 项结果，共 0 项",
+					"sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+					"sInfoPostFix":  "",
+					"sSearch":       "寻找:",
+					"sUrl":          "",
+					"oPaginate": {
+						"sFirst":    "&nbsp;",
+						"sPrevious": "&nbsp;",
+						"sNext":     "&nbsp;",
+						"sLast":     "&nbsp;"
+					}
+				},
+			  "bJQueryUI": false,
+			  "bFilter": true,
+			  "sDom": "<'row'<'pull-left'f><'table_pagin'p><'table_info'i>>t<'table_bottom'<'table_pagin'p><'table_info'i>>",
+			  "sPaginationType": "full_numbers",
+			   "bPaginate": true,
+       		 	"iDisplayLength": 10,
+			  "aaSorting": []
+			  
+			});
+    	}
+    	$(function(){
+    		$("[data-toggle='tooltip']").tooltip();
+    		$(".select").chosen();
+
+    		
+
+    	})
+    	
+		var date_range = $("#appendedInput").val().split("~");
+
+		var calendar = new xmoCalendar({
+		  inputId : '#appendedInput',
+		  // lang : 'EN',
+		  lang : "CN", //"CN" "EN"
+		  initTime : '2013-10-28',
+		  submitCallback : function(){
+		      update_days_remaining();
+		  },
+		  
+		  startTime : "2013-01-05"
+		  
+		})
+
+
+
+		function update_days_remaining() {
+		      var date_range = $("#appendedInput").val().split("~");
+		      var exclude_after_today_length = 0
+		      var exclude_dates_length = 0
+		      
+		      if (date_range[1] && date_range[1] != "") {
+		        var today = "2016-01-05";
+		        var regEx = new RegExp("\\-","gi");
+		        var d = new Date(date_range[0].replace(regEx,"/"))
+		        
+		        if($(".exclude_dates").val() != ""){
+		        var exclude_dates = $(".exclude_dates").val().split(",");
+		        exclude_dates_length = exclude_dates.length;
+		        if(exclude_dates_length > 1){
+		          $.each(exclude_dates,function(i, val){
+		            if(parseDate(val) - parseDate(today) >= 0){exclude_after_today_length++}
+		          })
+		        }
+		      }
+		        
+		        var remaining_days;
+		        if(d > new Date()){
+		          remaining_days = (parseDate(date_range[1]) - parseDate(date_range[0])) / (24 * 3600 * 1000) + 1;
+		        }
+		        else{
+		        remaining_days = (parseDate(date_range[1]) - parseDate(today)) / (24 * 3600 * 1000) + 1;
+		        }
+		        var total_days = (parseDate(date_range[1]) - parseDate(date_range[0])) / (24 * 3600 * 1000) + 1;
+		        if(total_days <= 0){
+		          return
+		        }
+		        var total_days = (parseDate(date_range[1]) - parseDate(date_range[0])) / (24 * 3600 * 1000) + 1;
+		        $("#total_days").html(total_days - exclude_dates_length);
+		        remaining_days = remaining_days - exclude_after_today_length;
+		        if(remaining_days < 0){remaining_days = 0}
+		        $("#remaining_days").html(remaining_days)
+		      }
+		      
+		      
+		      
+		    }
+		  function parseDate(input) {
+		    var parts = input.match(/(\d+)/g);
+		    return new Date(parts[0], parts[1]-1, parts[2]); 
+		  }
+		var Bshare_Advertisement = {
+		    init : function(){
+		      this.init_event_bind();
+		      this.init_table();
+		      $("#bshare_img_advertisement_list").show();
+		    },
+		    close_layer:function(dom){
+		      $("body").removeClass("layer_hidden");
+		      $(".xubox_shade").hide();
+		      $("#"+dom).removeClass("layer_parent_div");
+		    },
+		    open_layer:function(dom){
+		      $("body").addClass("layer_hidden");
+		      if($("#"+dom) && $("#"+dom).length>0){
+		        $("#"+dom).addClass("layer_parent_div")
+		      }else{
+		        $(".xubox_layer").wrap('<div id = "'+dom+'" class = "layer_parent_div"></div>')
+		      }
+		      
+		      $(".xubox_shade").hide();
+		    },
+		    init_event_bind : function(){
+
+		      $(document).on('click.edit_click','.edit_click_btn',function(){
+		       $.layer({
+		          type: 1,
+		          title: false, //不显示默认标题栏
+		          shade: [0.5, '#000'],
+		          border: [6, 1, '#fff'],
+		          area: ['800px', ($(window).height()-100)+'px'],
+		          success : bshare_error_stick,
+		          page: {dom:'#get-creatives-box'},
+		          close: function(index){
+		            Bshare_Advertisement.close_layer("ad_layer_parent");
+		          }
+		        });
+		        Bshare_Advertisement.open_layer("ad_layer_parent");
+		       $("#select_xmo_ad_serving").attr("checked",true).change();
+		        var obj = this;
+		        ad_id = $(obj).attr("data_ad_id");
+		        
+		        landing_url = $('#full_land_url_' + ad_id).text();
+		        display_url = $("#full_display_url_" + ad_id).text();
+		        ad_name = $("#full_ad_name_" + ad_id).text();
+		        ad_size = $("#full_ad_size_" + ad_id).text();
+		        ad_code = $("#full_ad_code_" + ad_id).text();
+		        $("#advertisement_image_edit").val("").change();
+		        ad_image_type = $("#full_ad_image_type_" + ad_id).text();
+		        is_only_h5_browser = $("#is_only_h5_browser_" + ad_id).text() == 'true';
+		        
+		        $('#upload_ad_div_edit').show();
+		        $("#upload_ad_div_add").hide();
+		        $('#ad_name_edit').val(ad_name);
+		        $("#redirect_url_edit").val(landing_url);
+		        $("#display_url_edit").val(display_url);
+		        $("#upload_ad_edit ").change();
+		        $("#ad_edit_id").val(ad_id);
+		        $("#advertisement_xmo_code_edit").val(ad_code);
+		        
+		        if((/\.(swf|zip)$/i).test(ad_image_type)){
+		          $("#flash_size_select_edit").show();
+		          $("#ad_size_edit").find("select").val(ad_size);
+		          $("#ad_size_edit").find("select").addClass("required");
+		        }else{
+		          $("#flash_size_select_edit").hide();
+		          $("#ad_size_edit").find("select").removeClass("required");
+		        }
+		        (/\.zip$/i).test(ad_image_type) && $("#ad_type").val() == 'true' ? $("#h5_browser_select_edit").show() : $("#h5_browser_select_edit").hide();
+		        $("#h5_browser_select_edit input").prop("checked", is_only_h5_browser);
+		        $("#ad_size_edit").find("select").attr("disabled", (/\.(zip)$/i).test(ad_image_type));
+		        $(".sub_txt").css("color","black");
+		        return false;
+		      })
+		      
+		    },
+		    init_table:function(){
+		    	$("#yusuan").dataTable({
+    			"oLanguage":{
+					"sProcessing":   "处理中...",
+					"sLengthMenu":   "显示 _MENU_ 项结果",
+					"sZeroRecords":  "没有匹配结果",
+					"sInfo":         "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+					"sInfoEmpty":    "显示第 0 至 0 项结果，共 0 项",
+					"sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+					"sInfoPostFix":  "",
+					"sSearch":       "寻找:",
+					"sUrl":          "",
+					"oPaginate": {
+						"sFirst":    "&nbsp;",
+						"sPrevious": "&nbsp;",
+						"sNext":     "&nbsp;",
+						"sLast":     "&nbsp;"
+					}
+				},
+			  "bJQueryUI": false,
+			  "bFilter": false,
+			  "sDom": "<'row'<'pull-left'f><'table_pagin'p><'table_info'i>>t<'table_bottom'<'table_pagin'p><'table_info'i>>",
+			   "bPaginate": false,
+			  "aaSorting": []
+			  
+			});
+		    }
+		  }
+		 
+    	function bshare_error_stick(){
+		  $('.xubox_page').on('scroll',function(){
+		    var box = $('.bshare_error',$(this));
+		    var wrapper = $('.error_wrapper',$(this));
+		    var topMin = parseInt(box.attr('data-top')) || 0;
+		    var top = $(this).scrollTop();
+		    top = top > topMin ? top : topMin+top;
+		    box.css({top:top});
+		    var InnerHeight = box.height();
+		    InnerHeight+=40;
+		    if($('.bshare_error:visible',$(this)).length == 0){InnerHeight=0;}
+		    wrapper.height(InnerHeight);
+		  })
+		}
+		  function addProduct(){
+		  	$.layer({
+		        type: 1,
+		        title: false, //不显示默认标题栏
+		        shade: [0.5, '#000'],
+		        border: [6, 1, '#fff'],
+		        area: ['800px', ($(window).height()-100)+'px'],
+		        success : bshare_error_stick,
+		        page: {dom:'#upload-box'},
+		        close: function(index){
+		          Bshare_Advertisement.close_layer("upload_layer_parent");
+		        }
+		    });
+		    Bshare_Advertisement.open_layer("upload_layer_parent");
+		    return false;
+		  }
+		
+    </script>
+</html>

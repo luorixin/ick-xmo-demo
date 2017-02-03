@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>客户管理</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Cache-Control" content="no-store" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1"/>
+	 <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+  
+	
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="http://xmostg.optimix.asia/stylesheets/xmo/application.css?9350">
+	<link rel="stylesheet" type="text/css" href="http://xmostg.optimix.asia/stylesheets/xmo/xmo_components.css?9350">
+	<link rel="stylesheet" type="text/css" href="stylesheets/chosen/chosen.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/calendar/xmo-calendar.css">
+
+	<link rel="stylesheet" type="text/css" href="js/layer/skin/layer.css">
+	<link rel="stylesheet" type="text/css" href="css/my_layer.css">
+	
+
+
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.tooltip.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap-tooltip.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/chosen.jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.dataTables.1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.xmo_tooltips.js"></script>
+	<script type="text/javascript" src="js/xmo-calendar.js"></script>
+	 <script type="text/javascript" src="js/layer/layer.min.js"></script>
+</head>
+    <body>
+    	<div class="container">
+	    	<!--头部-->
+	    	<div class="myheading">
+				<nav class="navbar navbar-inverse">
+					<div class="x-navbar">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							
+							<a href="#" class="navbar-brand" data-toggle="offcanvas">
+								<img src="images/logo1.png" alt="" style="width:118px">
+							</a>
+						</div>
+							
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">	
+							<!-- Single button -->
+							<div class="x-user-main x-search">
+										
+								<label class="x-main-title">销售管理系统</label>
+								
+							</div>
+
+							 <div class="x-top-menu" >
+								<ul class="nav navbar-nav">
+									
+									<li class="selected"><a href="./index.html">我的订单</a></li>
+									<li><a href="./Campaigns.html">我的客户</a></li>
+									<li><a href="./Campaigns.html">售前预览</a></li>
+									<li>
+										<a href="#">后台管理</a>
+										
+										<ul class="dropdown-top-menu" aria-labelledby="dropdownMenu1">
+											<span class="nav-arrow"></span>
+										    <li><a href="./Tracking.html">产品</a>
+										    	
+										    </li>
+										    <li><a href="./Tracking.html">渠道</a>
+										    	
+										    </li>
+										    <li><a href="./AdCreative.html">流程通知</a></li>
+										    <li><a href="./Audience.html">用户</a>
+												<ul class="sub-top-menu ">
+										    		<li><a href="#">用户</a></li>
+										    		<li><a href="#">用户群组</a></li>
+										    	</ul>	
+										    	<span class="caret-right"></span>
+										    </li>
+										  </ul>
+									</li>
+								</ul>
+								
+							</div>
+							<!-- Single button -->
+							<div class="x-user-main  navbar-right ">
+								<div class="x-user-con">
+									<!--
+										<img class="x-user " src="https://git.bznx.net/assets/logo-white-ed4a8c29c69c582954818a833b737e7a.png">
+									-->
+										<span class="x-user-dis">Admin:&nbsp;&nbsp;Shirely.admin<br/> </span>
+										<span class="x-user-arrow icon-dropdown"></span>
+								</div>
+
+								<ul class="x-user-list">
+									<span class="nav-arrow"></span>
+									<li >
+										<a class="x-user-config" href="./Platform_setting.html">
+											<span class="icon_accountsetting icon_setting"></span>
+											Platform Setting</a>
+									</li>
+									<li >
+										
+										<a class="x-user-config" href="./Account_setting.html">
+											<span class="icon_password icon_setting"></span>Account Settings</a>
+									</li>
+									<li >
+										
+										<a class="x-user-config" href="#">
+											<span class="icon_logout icon_setting"></span>
+											Logout</a>
+									</li>
+								</ul>
+							</div>
+
+						
+							
+							<div class="navbar-form navbar-right" >
+								
+							       
+							        <span class="x-lang-en selected"></span>
+							        <span class="x-lang-ch"></span>
+							      </div>
+						</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<!--左边栏-->
+    		<div class="page_title">
+			  <div id="breadcrumb" class="row">
+			    <!-- Top left headings and links -->
+			    <div class="client-row">
+			      
+			     <span class="content_name_12">我的订单 > </span>
+			     <span class="content_name_12">订单详情</span>
+			    </div>
+			    
+			    
+			  </div>
+
+			  <!-- Page title -->
+			  
+			   <div class="row"><div class="client-row"><h1>订单详情</h1></div></div>
+			</div>
+
+			<div class="row">
+				<div class="pull-left sub-title">
+				    <span>BCU7219778426</span>
+				    <label>UA Finance_2016 -1_iCLick Video NetWork&nbsp;<span style="color: black;font-size: 12px;">(预算：RMB 200，000)</span></label>
+				    
+				  </div>
+			</div>
+			
+			<ul class="nav nav-tabs sub-nav-tabs" id="myTab">
+			  <li class=" sum_tab">
+			    <a data-toggle="tab" href="#tab-detail">订单详情</a>
+			  </li>
+			  <li class="active list_tab">
+			    <a data-toggle="tab" href="#tab-fenliang">媒体分量</a>
+			  </li>
+			  <li class=" list_tab">
+			    <a data-toggle="tab" href="#tab-paiqi">上传排期表</a>
+			  </li>
+			</ul>
+				
+			<div class="tab-content">
+				<div class="tab-pane fade" id="tab-detail">
+
+				</div>
+				<div class="tab-pane fade active in" id="tab-fenliang">
+					<div class="big_section" style="padding:0">
+					 <form class="form-horizontal">
+					 	<div class="sub_section_white">
+				    	 	<div class="control-group">
+						      <label class="control-label">
+						          <label for="campaign_campaignname" class="inline">查阅媒体展现质量</label>
+						      </label>
+						      <div class="controls">
+						      	<div class="row" style="padding-left:20px;">
+						    		已选产品：
+						    	</div>
+						        <div class="row">
+							          <div class="item_two_column">
+							          <div class="span">
+							                <select class="select"  style="width: 361px; ">
+							                	<option value="">产品1：PC平台-视频广告前贴片45秒</option>
+												<option value="">产品2：PC平台-视频广告前贴片45秒</option>
+											</select>
+							          </div>
+							      	</div>
+						        </div>
+						        <div class="row">
+						        	<div class="media_condition row">
+						        		<label>地域</label>
+						        		<div class="span">
+							                <select data-placeholder="请选择" style="width: 361px; " class="select">
+							                    <option value="1156310000">中国</option>
+							                    <option value="1156530000">海外</option>
+							                   
+							                </select>
+							              </div>
+							              <div class="span">
+							                <a class="selection_icon country_select_icon delivery_provinces" href="javascript:void(0);"></a>
+							              </div>
+						        	</div>
+						        	<div class="media_condition row">
+						        		<label>媒体类型</label>
+						        		<div class="span">
+							                <select data-placeholder="请选择" multiple style="width: 361px; " class="select">
+							                    <option value="1156310000">视频</option>
+							                    <option value="1156530000">海外</option>
+							                   
+							                </select>
+							              </div>
+							              <div class="span">
+							                <a class="selection_icon country_select_icon delivery_provinces" href="javascript:void(0);"></a>
+							              </div>
+						        	</div>
+						        	<div class="media_condition row">
+						        		<label>原始尺寸</label>
+						        		<div class="span">
+							                <select data-placeholder="请选择" multiple style="width: 361px; " class="select">
+							                    <option value="1156310000">视频</option>
+							                    <option value="1156530000">海外</option>
+							                   
+							                </select>
+							              </div>
+							              <div class="span">
+							                <a class="selection_icon country_select_icon delivery_provinces" href="javascript:void(0);"></a>
+							              </div>
+						        	</div>
+						        	<div class="media_condition row">
+						        		<label>弹幕/扩展尺寸</label>
+						        		<div class="span">
+							                <select data-placeholder="请选择" style="width: 361px; " class="select">
+							                    <option value="1156310000">中国</option>
+							                    <option value="1156530000">海外</option>
+							                   
+							                </select>
+							              </div>
+							              <div class="span">
+							                <a class="selection_icon country_select_icon delivery_provinces" href="javascript:void(0);"></a>
+							              </div>
+						        	</div>
+						        </div>
+
+						        <div class="row t_margin_20" >
+						    		<div class="table_white">
+						    			<table id="zhanxian" class="table table-striped table-bordered table-condensed t_padding_0" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+						    			 <thead>
+									      <tr class="even">
+									      	<th class="align_center align_top"><input type="checkbox"></th>
+									        <th class="align_left align_top">地域</th>
+									        <th class="align_left align_top">网站名称</th>
+									        <th class="align_left align_top">网站类型</th>
+									        <th class="align_left align_top">广告形式</th>
+									        <th class="align_left align_top">原始尺寸</th>
+									        <th class="align_left align_top">弹幕/拓展尺寸</th>
+									        <th class="align_left align_top">参考点击率</th>
+									        <th class="align_left align_top">参考可校流量</th>
+									        <th class="align_right align_top">分配展示量</th>
+									        <th class="align_right align_top">分配展示比例</th>
+									      </tr>
+									    </thead>
+										  <tfoot>
+										  	<tr>
+										  		<td colspan="9">
+										  			<div class="ball-div"><i class="ball ball_grey"></i> <span style="padding-left:18px;">GP未有结果</span></div>
+										  			<span style="font-weight:bold;float:right">全部分配展示量</span>
+										  		</td>
+										  		<td class="align_right">20K</td>
+										  		<td class="align_right">100%</td>
+										  	</tr>
+										  </tfoot>
+										  <tbody>
+										  	<tr class="odd">
+									             <td class="align_center sorting_1">
+									              <input type="checkbox"/>
+									            </td>
+									            <td class="align_left">-</td>
+									            <td class="align_left">视频</td>
+									            <td class="align_left">瑞祥</td>
+									            <td class="align_left">Pre-roll</td>
+									             <td class="align_left">640*480</td>
+									            <td class="align_left">-</td>
+									            <td class="align_right">0.3% - 0.4%</td>
+									            <td class="align_right">92,200K</td>
+									            <td class="align_right"><input type="text" style="width:50px;" value="0"> K</td>
+									            <td class="align_right"><input type="text" style="width:50px;" value="0"> %</td>
+									        </tr>
+									        <tr class="even">
+									             <td class="align_center sorting_1">
+									              <input type="checkbox"/>
+									            </td>
+									            <td class="align_left">-</td>
+									             <td class="align_left">视频</td>
+									            <td class="align_left">瑞祥</td>
+									            <td class="align_left">Pre-roll</td>
+									             <td class="align_left">640*480</td>
+									            <td class="align_left">-</td>
+									            <td class="align_right">0.3% - 0.4%</td>
+									            <td class="align_right">92,200K</td>
+									            <td class="align_right"><input type="text" style="width:50px;" value="0"> K</td>
+									            <td class="align_right"><input type="text" style="width:50px;" value="0"> %</td>
+									        </tr>
+									        <tr class="odd">
+									             <td class="align_center sorting_1">
+									              <input type="checkbox"/>
+									            </td>
+									            <td class="align_left">-</td>
+									             <td class="align_left">视频</td>
+									            <td class="align_left">瑞祥</td>
+									            <td class="align_left">Pre-roll</td>
+									             <td class="align_left">640*480</td>
+									            <td class="align_left">-</td>
+									            <td class="align_right">0.3% - 0.4%</td>
+									            <td class="align_right">92,200K</td>
+									            <td class="align_right"><input type="text" style="width:50px;" value="0"> K</td>
+									            <td class="align_right"><input type="text" style="width:50px;" value="0"> %</td>
+									        </tr>
+									        <tr class="even">
+									             <td class="align_center sorting_1">
+									              <input type="checkbox"/>
+									            </td>
+									            <td class="align_left">-</td>
+									             <td class="align_left">视频</td>
+									            <td class="align_left">瑞祥</td>
+									            <td class="align_left">Pre-roll</td>
+									             <td class="align_left">640*480</td>
+									            <td class="align_left">-</td>
+									            <td class="align_right">0.3% - 0.4%</td>
+									            <td class="align_right">92,200K</td>
+									            <td class="align_right"><input type="text" style="width:50px;" value="0"> K</td>
+									            <td class="align_right"><input type="text" style="width:50px;" value="0"> %</td>
+									        </tr>
+										  </tbody>
+										   </table>
+									 </div>
+								</div>
+								 <div class="row t_margin_20">
+							      <div class="button_area">
+							      <div class="">
+							        
+							        <div class="outer_submit">
+							          
+							          <input value="生成自动分量" type="button" class="submit_tag_button" onclick="doSub()">
+							        </div>
+							      </div>
+							      </div>
+							    </div>
+						      </div>
+						    </div>
+
+						    <div class="control-group">
+						      <label class="control-label">
+						          <label for="campaign_campaignname" class="inline">已分配产品</label>
+						      </label>
+						      <div class="controls">
+						      	<div class="row" style="padding-left:20px;">
+						    		未分配任何产品
+						    	</div>
+							    </div>
+							</div>
+
+							<div class="control-group">
+						      <label class="control-label">
+						          <label for="campaign_campaignname" class="inline">订单整体GP指标</label>
+						      </label>
+						      <div class="controls">
+						      	<div class="row" style="padding-left:20px;">
+						      		<div class="row" style="width:680px;height: 30px;line-height: 30px;border-radius: 5px;padding: 0 5px;margin-top: -5px;border: 2px solid rgba(0, 0, 0, 0.05);">
+							    		<div class="ball-div"><i class="ball ball_grey"></i> <span style="padding-left:18px;">GP未有结果</span></div>
+							    		<span style="float:right;color:#fd9827">主要：整体GP指标已包括DSP产品，但不包括移动平台的产品。</span>
+						    		</div>
+						    	</div>
+							  </div>
+							</div>
+						</div>
+						<div class="row t_margin_20">
+					      <div class="button_area">
+					      <div class="">
+					        
+					        <div class="outer_cancel"><button type="button" onclick="window.history.back();">取消</button></div>
+					        <div class="outer_submit">
+					          
+					          <input value="保存" type="button" class="submit_tag_button" onclick="doSub()">
+					        </div>
+					      </div>
+					      </div>
+					    </div>
+					  </form>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="tab-paiqi">
+
+					<div class="big_section" style="padding:0">
+					 <form class="form-horizontal">
+					 	<div class="sub_section_white">
+					 		<div class="row font_28" style="padding-left:20px;">排期表设定</div>
+
+					 		<div class="control-group">
+						      <label class="control-label">
+						          <label for="campaign_campaignname" class="inline">下载排期表</label>
+						      </label>
+							     <div class="controls">
+							     	<div class="row" >
+							     		<div class="span">
+											<label class="checkbox">
+											<input checked="checked" type="checkbox" value="1">展示量
+											</label>
+										</div>
+										<div class="span">
+											<label class="checkbox">
+											<input checked="checked" type="checkbox" value="1">点击率
+											</label>
+										</div>
+										<div class="span">
+											<label class="checkbox">
+											<input checked="checked" type="checkbox" value="1">点击量
+											</label>
+										</div>
+							     	</div>
+							    	<div class="row" style="padding-left:20px;">
+							    		<div class="download-button"><i class="icon-download"></i>下载排期表</div>
+							    	</div>
+							    </div>
+							</div>
+
+							<div class="control-group">
+						      <label class="control-label">
+						          <label for="campaign_campaignname" class="inline">上传</label>
+						      </label>
+						      <label class="radio-inlie" style="margin-left:36px;">
+							      <input type="radio" name="order_report_type" id="optionsRadios1" value="1" checked="">排表表
+						      </label>
+						      <label class="radio-inlie" style="margin-left:36px">
+							      <input type="radio" name="order_report_type" id="optionsRadios1" value="1" checked="">客户确认证明
+						      </label>
+						      <div class="row"></div>
+							     <div class="controls">
+							     	<div class="row ">
+								        <div class="item_two_column">
+								          <div class="span">
+								            <input type="file" style="height:12px;line-height:12px;padding:4px 0;" >
+								          </div>
+								        </div>
+								    </div>
+								    <div class="row">
+								    	<div class="item_two_column">
+								          <div class="span">
+								    		格式：PDF,JPG,JPEG,PNG,XLS,XLSX
+								    		</div>
+								    	</div>
+								    </div>
+							     </div>
+						    </div>
+
+						    <div class="control-group">
+							    <label class="control-label" for="audience_name"></label>
+							    <div class="controls ">
+							      <div class="row">
+							        <div class="span">
+							          <div class="outer_submit">
+								          
+								          <input value="上传" type="button" class="submit_tag_button" onclick="doSub()">
+								        </div>
+							        </div>
+							       	
+							      </div>
+							      
+							    </div>
+						    </div>
+
+
+					</div>
+					<div class="row font_28" style="padding:20px 0 0 20px;">执行表设定</div>
+					<div class="control-group">
+				        <label class="control-label">
+				          <label class="inline" for="campaign_campaignname">项目着陆页地址</label></label>
+				        <div class="controls">
+				          <div class="row ">
+				            <div class="item_two_column">
+				              <div class="span">
+				                <input class="span5 required" size="30" style="width:351px;" type="text">
+				              </div>
+				            </div>
+				          </div>
+				        </div>
+			      </div>
+
+			      <div class="control-group">
+				        <label class="control-label">
+				          <label class="inline" for="campaign_campaignname">频率上限</label></label>
+				        <div class="controls">
+				          <div class="row">
+				    			<div class="span">
+									<label class="checkbox">
+									<input checked="checked" type="checkbox" value="1">开启
+									</label>
+								</div>
+				    		</div>
+				       
+					        <div class="row" style="padding-left:20px;">
+					        	<input type="text" style="width:100px;text-align: right;" value="6"/> 展现 
+					        	<input type="text" style="width:100px" value="每天" disabled/> 
+					        	<input type="text" style="width:100px" value="当前媒体计划" disabled/>
+					        </div>
+				         </div>
+			      </div>
+
+			      <div class="control-group">
+				    <label class="control-label" for="audience_name">关键词</label>
+				    <div class="controls ">
+				      <div class="row">
+				        <div class="span">
+				          <textarea class="input-xxlarge "style="width:361px"  cols="20" rows="8"></textarea>
+				        </div>
+				       	 <div class="span underlined l_margin_10">
+                          
+	                         <span class="xmo-tooltip" data-position="right" data-width="300" >
+	                         	<i class="icon-help r_margin_0" style="height:150px;"></i>
+	                         	<div class="popover xmo-popover fade in">
+	                         		<div class="arrow"></div><div class="popover-inner xmo-popover-inner">
+	                         		<div class="popover-content">追踪代码记录的参数。例如订单编号，订单金额等
+	                         		</div>
+	                         		</div>
+	                         	</div>
+	                         </span>
+	                        </div>
+					      </div>
+				      </div>
+				      
+				    </div>
+
+				    <div class="control-group">
+				      	<label class="control-label">
+					      <label  class="inline" for="">添加XMO网站监测代码</label>
+					    </label>
+					    <label class="radio-inlie" style="margin-left:36px;">
+					      <input type="radio" name="radio23" id="optionsRadios1" value="1" checked="">是
+					    </label>
+					    
+					     <label class="radio-inlie" style="margin-left:36px">
+					      <input type="radio" name="radio23" id="optionsRadios1" value="1" checked="">否
+					    </label>
+				   </div>
+
+
+				   <div class="control-group">
+				      	<label class="control-label">
+					      <label  class="inline" for="">客户提供广告素材</label>
+					    </label>
+					    <label class="radio-inlie" style="margin-left:36px;">
+					      <input type="radio" name="radio22" id="optionsRadios1" value="1" checked="">是
+					    </label>
+					    
+					     <label class="radio-inlie" style="margin-left:36px">
+					      <input type="radio" name="radio22" id="optionsRadios1" value="1" checked="">否
+					    </label>
+				   </div>
+
+
+				   <div class="control-group">
+				      	<label class="control-label">
+					      <label  class="inline" for="">报表模板</label>
+					    </label>
+					    <label class="radio-inlie" style="margin-left:36px;">
+					      <input type="radio" name="radio21" id="optionsRadios1" value="1" checked="">标准版
+					    </label>
+					    
+					     <label class="radio-inlie" style="margin-left:36px">
+					      <input type="radio" name="radio21" id="optionsRadios1" value="1" checked="">客户模板
+					    </label>
+				   </div>
+
+				   <div class="control-group">
+				      	<label class="control-label">
+					      <label  class="inline" for="">报表周期</label>
+					    </label>
+					    <label class="checkbox-inlie" style="margin-left:36px;">
+					      <input type="checkbox" name="radio3" id="optionsRadios1" value="1" checked="">日报
+					    </label>
+					    
+					     <label class="checkbox-inlie" style="margin-left:36px">
+					      <input type="checkbox" name="radio3" id="optionsRadios1" value="1" checked="">周报
+					    </label>
+
+					    <label class="checkbox-inlie" style="margin-left:36px">
+					      <input type="checkbox" name="radio3" id="optionsRadios1" value="1" checked="">结案
+					    </label>
+				   </div>
+
+				   <div class="control-group">
+					    <label class="control-label" for="audience_name">特殊拷屏要求</label>
+					    <div class="controls ">
+					      <div class="row">
+					        <div class="span">
+					          <textarea class="input-xxlarge "style="width:361px"  cols="20" rows="8"></textarea>
+					        </div>
+					       	
+					      </div>
+					      
+					    </div>
+					</div>
+
+			    <div class="control-group">
+				    <label class="control-label" for="audience_name"></label>
+				    <div class="controls ">
+				      <div class="row">
+				        <div class="span">
+				          <div class="outer_submit">
+					          
+					          <input value="生成" type="button" class="submit_tag_button" onclick="doSub()">
+					        </div>
+				        </div>
+				       	
+				      </div>
+				      
+				    </div>
+			    </div>
+
+			</div>
+		</form>
+		</div>
+
+
+		<div class="clearfooter"></div>
+			<div class="myfooter">
+			    <label class="x-footer">
+			      Copyright © 2015  iClick Interactive Asia Limited. All Rights Reserved.
+			        <span>| <a target="_blank" href="/zh-cn/admin/send_file_upload_release_notes">产品更新日志
+			        </a></span>
+			      <span>| <a target="_blank" href="/templates/xmo_help.pdf" onclick="_xmoIstag1();">幫助中心</a></span>
+			      <span>| <a href="/zh-cn/privacy_policy">隐私声明</a></span>
+			    </label>
+			    <label class="x-footer">10.1.1.63 v9.26.0(建议采用浏览器: Internet Explorer 8.0 and 9.0, Chrome 8.0+, Firefox 3.5+, Safari 1.0+, Opera V11+.)</label>
+			  </div>
+
+
+		
+    </body>
+    <script type="text/javascript">
+    	initTable();
+    	function initTable(){
+    		 
+    		  $('#zhanxian').dataTable({
+    			"oLanguage":{
+					"sProcessing":   "处理中...",
+					"sLengthMenu":   "显示 _MENU_ 项结果",
+					"sZeroRecords":  "没有匹配结果",
+					"sInfo":         "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+					"sInfoEmpty":    "显示第 0 至 0 项结果，共 0 项",
+					"sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+					"sInfoPostFix":  "",
+					"sSearch":       "寻找:",
+					"sUrl":          "",
+					"oPaginate": {
+						"sFirst":    "&nbsp;",
+						"sPrevious": "&nbsp;",
+						"sNext":     "&nbsp;",
+						"sLast":     "&nbsp;"
+					}
+				},
+			  "bJQueryUI": false,
+			  "bFilter": true,
+			  "sDom": "<'row'<'pull-left'f><'table_pagin'p><'table_info'i>>t<'table_bottom'<'pull-left'><'table_pagin'p><'table_info'i>>",
+			  "sPaginationType": "full_numbers",
+			   "bPaginate": true,
+       		 	"iDisplayLength": 10,
+       		 	"bAutoWidth": false,
+			    "aoColumns" : [
+			    { "asSorting": [ ] },
+			    null,
+			    null,
+			    null,
+			    null,
+			    null,
+			    null,
+			    null,
+			    null,
+			    null,
+			    null
+			    ],
+			  "aaSorting": [ [1,'asc'] ],
+			  "fnInitComplete" : function(){
+			  	 var html='<i class="ico_message" style="float:left"></i><span style="float:right;margin-left:5px;"> 未分配展示量：25(100.00%)<br>请勾选媒体后，填写分配展示量，或点击右侧按钮由系统自行分配</span>'
+			      $('div#zhanxian_wrapper .table_bottom div.pull-left').html(html);
+			  }
+			  
+			});
+    	}
+    	$(function(){
+    		$("[data-toggle='tooltip']").tooltip();
+    		$(".select").chosen();
+
+    		
+
+    	})
+    	
+		
+		
+    </script>
+</html>

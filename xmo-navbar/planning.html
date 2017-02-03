@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>客户管理</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Cache-Control" content="no-store" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1"/>
+	 <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+  
+	
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="http://xmostg.optimix.asia/stylesheets/xmo/application.css?9250">
+	<link rel="stylesheet" type="text/css" href="http://xmostg.optimix.asia/stylesheets/xmo/xmo_components.css?9250">
+
+	<link rel="stylesheet" type="text/css" href="stylesheets/multilayer/multilayer.css" />
+
+	<link rel="stylesheet" type="text/css" href="stylesheets/chosen/chosen.css">
+
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+
+	 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	 <script type="text/javascript" src="js/jquery.tooltip.js"></script>
+	 <script type="text/javascript" src="bootstrap/js/bootstrap-tooltip.js"></script>
+	 <script type="text/javascript" src="js/common.js"></script>
+
+	 <script type="text/javascript" src="js/multilayer.js"></script>	
+	 <script type="text/javascript" src="js/chosen.jquery.min.js"></script>
+	 <script type="text/javascript" src="js/highcharts.js"></script>
+	 <script type="text/javascript" src="js/highcharts-more.js"></script>
+	
+	<script type="text/javascript"  src="js/quotation_js/base64.js" ></script>	
+	<script type="text/javascript"  src="js/quotation_js/jquery.tagcloud.js" ></script>	
+	<script type="text/javascript"  src="js/quotation_js/canvas2image.js" ></script>	
+	<script type="text/javascript"  src="js/quotation_js/html2canvas.js" ></script>	
+
+	<script type="text/javascript"  src="js/quotation_js/chart/chartwell.min.js" ></script>	
+	<script type="text/javascript"  src="js/quotation_js/chart/chartwell_radar.min.js" ></script>	
+	<script type="text/javascript"  src="js/quotation_js/jsPDF/jspdf.js" ></script>	
+	<script type="text/javascript"  src="js/quotation_js/jsPDF/libs/FileSaver.js/FileSaver.js" ></script>	
+	<script type="text/javascript"  src="js/quotation_js/jsPDF/libs/Blob.js/BlobBuilder.js" ></script>	
+	<script type="text/javascript"  src="js/quotation_js/jsPDF/jspdf.plugin.addimage.js" ></script>	
+	<script type="text/javascript"  src="js/quotation_js/jsPDF/jspdf.plugin.standard_fonts_metrics.js" ></script>	
+	<script type="text/javascript"  src="js/quotation_js/jsPDF/jspdf.plugin.split_text_to_size.js" ></script>	
+	<script type="text/javascript"  src="js/quotation_js/jsPDF/jspdf.plugin.from_html.js" ></script>
+
+	<script type="text/javascript" src="http://gabelerner.github.io/canvg/rgbcolor.js"></script> 
+	<script type="text/javascript" src="http://gabelerner.github.io/canvg/StackBlur.js"></script>
+	<script type="text/javascript" src="http://gabelerner.github.io/canvg/canvg.js"></script> 	
+	
+</head>
+    <body>
+    	<div class="container">
+	    	<!--头部-->
+	    	<div class="myheading">
+			  <nav class="navbar navbar-inverse">
+			    <div class="x-navbar">
+			    <div class="container-fluid">
+			      <div class="navbar-header">
+			        <a href="http://xmo.optimix.asia/zh-cn/campaigns/cross_marketplace_dashboard?client_id=1110" class="navbar-brand" data-toggle="offcanvas">
+			          <img src="images/logo1.png" alt="" style="width:118px">
+			        </a>
+			      </div>
+			        
+			      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">  
+			        <!-- Single button -->
+			        <div class="x-user-main x-search">
+			          <div class="x-user-con x-filter">
+			              <span class="x-top-search-title">
+			                <label style="font-size:12px;">客户</label>
+			                
+			                <label class="x-top-search-main xmo-tooltip" data-position="right" data-width="300">
+			                  <span style="font-weight:bolder">iclick</span>
+			                  
+			                </label>
+			                
+			                  <a href="http://xmo.optimix.asia/zh-cn/clients/1110/edit"><i class="icon-setup icon_act"></i></a>
+			                  
+			              </span>
+			              <span class="x-user-arrow icon-dropdown"></span>
+			          </div>
+			          <div class="x-user-list x-top-search-list">
+			            <span class="nav-arrow"></span>
+			            <div class="x-top-content">
+			              <div class="plus-button">
+			                <a href="http://xmo.optimix.asia/zh-cn/clients/new">
+			                  <i class="plus-ico"></i><span>客户</span>
+			                </a>
+			              </div>
+			              <hr>
+			              <div class="x-top-recent">
+			                <label>最近浏览</label>
+			                <ul>
+			                  
+			                  <li><a href="#" class="client_link" id="1114">
+			                    <span class="xmo-tooltip" data-position="top" data-width="300">
+			                    RegalHotel
+			                    
+			                    </span></a>
+			                  </li>
+			                  
+			                  <li><a href="#" class="client_link" id="1307">
+			                    <span class="xmo-tooltip" data-position="top" data-width="300">
+			                    平安好盈
+			                    
+			                    </span></a>
+			                  </li>
+			                  
+			                  <li><a href="#" class="client_link" id="1110">
+			                    <span class="xmo-tooltip" data-position="top" data-width="300">
+			                    iclick
+			                    
+			                    </span></a>
+			                  </li>
+			                  
+			                </ul>
+			                <hr>
+			              </div>
+			              
+			            <div class="x-top-search">
+			              <div class="x-top-search-search">
+			                <input class="input-search" placeholder="搜索客户">
+			              </div>
+			            </div>
+			              <div class="x-top-result">
+			                <label>所有客户</label>
+			                <ul>
+			                  
+			                  <li><a href="#" class="client_link" id="1316">
+			                    <span class="xmo-tooltip" data-position="top" data-width="300">
+			                    new_client_from_new_nav
+			                    
+			                    </span></a>
+			                  </li>
+			                  
+			                  <li><a href="#" class="client_link" id="1315">
+			                    <span class="xmo-tooltip" data-position="top" data-width="300">
+			                    深圳移动12月
+			                    
+			                    </span></a>
+			                  </li>
+			                  
+			                
+			                  
+			                </ul>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+			        
+			        <div class="x-top-menu">
+			          <ul class="nav navbar-nav">
+			            <li class="selected"><a href="http://xmo.optimix.asia/zh-cn/campaigns/cross_marketplace_dashboard?client_id=1110">推广计划</a></li>
+			            
+			            <li class="">
+			              
+			              <a href="http://xmo.optimix.asia/zh-cn/clients/1110/goalinfos">资源库</a>
+			              <ul class="dropdown-top-menu" aria-labelledby="dropdownMenu1">
+			                  <span class="nav-arrow"></span>
+			                  <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/goalinfos">追踪代码</a>
+			                    <ul class="sub-top-menu ">
+			                      <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/goalinfos">网站转化路径</a></li>
+			                      <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/universal_tag">通用代码</a></li>
+			                      <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/goalevents">活动设置</a></li>
+			                      <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/virtualtags">虚拟标签</a></li>
+			                      <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/transaction_report">活动日志</a></li>
+			                      <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/ip_filters">排除 IP 地址</a></li>
+			                      <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/valid_domains">域验证</a></li>
+			                      
+			                      <li><a href="/zh-cn/shorten_url?client_id=1110">转换短地址</a></li>
+			                     
+			                    </ul> 
+			                    <span class="caret-right"></span>
+			                  </li>
+			                  
+			                  <li>
+			                    <a href="http://xmo.optimix.asia/zh-cn/clients/1110/audiences">目标人群</a>
+			                  </li>
+			                  
+			                </ul>
+			            </li>
+			            <li class=""><a href="http://xmo.optimix.asia/zh-cn/clients/1110/schedule_reports/generate_report">报表</a>
+			              <ul class="dropdown-top-menu" aria-labelledby="dropdownMenu1">
+			                <span class="nav-arrow"></span>
+			                <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/schedule_reports/generate_report">计划分析</a></li>
+			                <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/notifications">通知</a></li>
+			                <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/schedule_reports">定期报表</a></li>
+			              </ul>
+			            </li>
+			            
+			            <li class=""><a href="http://xmo.optimix.asia/zh-cn/media_plan_quotations">策划工具</a>
+			            </li>
+			            
+			          </ul>
+			          
+			        </div>
+			        <!-- Single button -->
+			        <div class="x-user-main  navbar-right ">
+			          <div class="x-user-con">
+			              <!-- <img class="x-user " src="https://git.bznx.net/assets/logo-white-ed4a8c29c69c582954818a833b737e7a.png"> -->
+			              <span class="x-user-dis">管理员:&nbsp;&nbsp;Jacob.sun<br></span>
+			              <span class="x-user-arrow icon-dropdown"></span>
+			          </div>
+			          
+			          <ul class="x-user-list">
+			            <span class="nav-arrow"></span>
+			            
+			                <li>
+			                  <a href="/zh-cn/users" class="x-user-config">
+			                    <span class="iclick-ico icon_setting"></span>平台设定
+			                  </a>
+			                </li>
+			            
+			            <li>
+			              <a href="http://xmo.optimix.asia/zh-cn/users/information" class="x-user-config">
+			                <span class="icon_accountsetting icon_setting"></span>账户资料
+			              </a>
+			            </li>
+			            <li>
+			              <a href="http://xmo.optimix.asia/zh-cn/users/changepassword" class="x-user-config">
+			                <span class="icon_password icon_setting"></span>变更密码
+			              </a>
+			            </li>
+			            <li>
+			              <a href="/zh-cn/admin/logout?back_url=http%253A%252F%252Fxmo.optimix.asia%252Fzh-cn%252Fpretargetings%252F2988%252Fedit_bshare" class="x-user-config">
+			                <span class="icon_logout icon_setting"></span>登出
+			              </a>
+			            </li>
+			          </ul>
+			        </div>
+
+			        <!-- <div class="x-user-con navbar-right x-bell">
+			          <a href="http://xmo.optimix.asia/zh-cn/clients/1110/notifications"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span></a>
+			        </div> -->
+			        
+			        <div class="navbar-form navbar-right">
+			          <a href="javascript:void(0);" onclick="change_lang('en');"><span class="x-lang-en "></span></a>
+			          <a href="javascript:void(0);" onclick="change_lang('zh-cn');"><span class="x-lang-ch selected"></span></a>
+			         </div>
+			         
+			      </div>
+			      </div>
+			    </div>
+			  </nav>
+			</div>
+			<!--左边栏-->
+	    		<div class="page_title">
+				  <div id="breadcrumb" class="row">
+				    <!-- Top left headings and links -->
+				   <div class="client-row">
+      
+			      <div class="row"><span class="content_name_12"><a href="http://xmo.optimix.asia/zh-cn/campaigns/cross_marketplace_dashboard?client_id=1110">策划工具</a> &gt; </span><span class="content_name_12">售前策划</span></div>
+			    </div>
+				    
+				    
+				  </div>
+
+				  <!-- Page title -->
+				  
+				   <div class="row"><div class="client-row"><h1>售前策划</h1></div></div>
+				</div>
+
+					<div class="plan-content big_section" id="myTabContent">
+						<div class="plan-selection clearfix">
+							<label>请选择</label>
+							<div class="selection-area">
+								<label class="radio"><input type="radio" data-value="tab-keyword" checked name="type"/>关键词</label>
+								<label class="radio"><input type="radio" data-value="tab-audience" name="type"/>兴趣类型</label>
+							</div>
+						</div>
+						 <!-- nav tab -->
+						
+						<!-- nav tab -->
+						<form method="post">
+							<div class="tab-pane fade active in" id="tab-keyword">
+								<div class="plan-layer">
+									<p>根据关键词定义客制化人群</p>
+									<div class="plan-area" id="">
+										<textarea>222</textarea>
+									</div>
+								</div>
+								<div class="plan-info">
+									<p>人群过滤</p>
+									<div class="edit-container">
+											<div class="controls">
+											    <div class="row b_margin_0 t_margin_10">
+											    	<div class="span">性别</div>
+											    </div>
+											    <div class="row b_margin_0">
+											      <div class="item_two">
+											        <div class="selection span">
+												          <select class="select_all select chzn-select span5"  multiple="multiple" name="chosen_test"  data-old="all">	<option value="all" selected="selected">全部</option>
+															<option value="10">男</option>
+															<option value="11">女</option>
+														</select>
+											        </div>
+											        <div class="span">
+											          <a href="javascript:void(0);" class="selection_icon PreMedia_2"></a>
+											        </div>
+											      </div>
+											    </div>
+
+			       								 <div class="row b_margin_0 t_margin_10">
+			       								 	<div class="span">年龄群组</div>
+			       								 </div>
+										  		<div class="row b_margin_0">
+										    	  <div class="item_two">
+										    	    <div class="selection span">
+										      		  <select class="select_all select chzn-select span5" multiple="multiple" name="chosen_test" data-old="all">
+											      		  	<option value="all" selected="selected">全部</option>
+															<option value="503001">18到24</option>
+															<option value="503002">25到34</option>
+															<option value="503003">35到44</option>
+															<option value="503004">45到54</option>
+															<option value="503005">55到64</option>
+															<option value="503006">64以上</option>
+														</select>
+										    		</div>
+										    		<div class="span">
+										        	  <a href="javascript:void(0);" class="selection_icon PreMedia_3"></a>
+										    		</div>
+										    	  </div>
+										    	</div>
+
+										  		<div class="row b_margin_0 t_margin_10">
+										  			<div class="span">地域</div>
+										  		</div>
+										  		<div class="row b_margin_0">
+										    	  <div class="item_two">
+										    		<div class="selection span" id="re_interest_test">
+											      		 <select class="select_all select span5 chzn-select" data-placeholder="请选择地域"  multiple="multiple" name="chosen_test" data-old="all">
+											      		  	<option value="all" selected="selected">全选</option>
+											      		  	<option value="1156110000,1156310000,1156360000" >北京,上海,江西</option>
+										                    <option value="1156310000">上海市</option>
+										                    <option value="1156530000">云南省</option>
+										                    <option value="1156150000">内蒙古自治区</option>
+										                    <option value="1156110000">北京市</option>
+										                    <option value="1156220000">吉林省</option>
+										                    <option value="1156510000">四川省</option>
+										                    <option value="1156120000">天津市</option>
+										                    <option value="1156640000">宁夏回族自治区</option>
+										                    <option value="1156340000">安徽省</option>
+										                    <option value="1156370000">山东省</option>
+										                    <option value="1156140000">山西省</option>
+										                    <option value="1156440000">广东省</option>
+										                    <option value="1156450000">广西壮族自治区</option>
+										                    <option value="1156650000">新疆维吾尔自治区</option>
+										                    <option value="1156320000">江苏省</option>
+										                    <option value="1156360000">江西省</option>
+										                    <option value="1156130000">河北省</option>
+										                    <option value="1156410000">河南省</option>
+										                    <option value="1156330000">浙江省</option>
+										                    <option value="1156460000">海南省</option>
+										                    <option value="1156420000">湖北省</option>
+										                    <option value="1156430000">湖南省</option>
+										                    <option value="1156620000">甘肃省</option>
+										                    <option value="1156350000">福建省</option>
+										                    <option value="1156540000">西藏自治区</option>
+										                    <option value="1156520000">贵州省</option>
+										                    <option value="1156210000">辽宁省</option>
+										                    <option value="1156500000">重庆市</option>
+										                    <option value="1156610000">陕西省</option>
+										                    <option value="1156630000">青海省</option>
+										                    <option value="1156230000">黑龙江省</option>
+														</select>
+										    		</div>
+										    	    <div class="span">
+										        	  <a href="javascript:void(0);" class="selection_icon PreMedia_4"></a>
+										    	    </div>
+										    	  </div>
+										        </div>
+
+										      </div>
+											<div class="submit-control" >
+												<div class="outer_cancel">
+													<input class="cancel back_button" onclick="$.hideTips()" type="button" value="重新设置">
+													
+												</div>
+											    <div class="outer_submit">
+											    	<input name="commit" type="submit" value="搜索">
+											    </div>
+											</div>
+											<div style="clear:both;*zoom:1"></div>
+									</div>
+								</div>
+							</div>
+						</form>
+						<form method="post">
+							<div class="tab-pane fade  " id="tab-audience">
+								<div class="plan-layer">
+									<p>根据兴趣类别定义客制化人群</p>
+									<div class="" id="multilayer">
+									</div>
+								</div>
+								<div class="plan-info">
+									<p>人群过滤</p>
+									<div class="edit-container">
+											<div class="controls">
+											    <div class="row b_margin_0 t_margin_10">
+											    	<div class="span">性别</div>
+											    </div>
+											    <div class="row b_margin_0">
+											      <div class="item_two">
+											        <div class="selection span">
+												          <select class="select_all select chzn-select span5"  multiple="multiple" name="chosen_test"  data-old="all">	<option value="all" selected="selected">全部</option>
+															<option value="10">男</option>
+															<option value="11">女</option>
+														</select>
+											        </div>
+											        <div class="span">
+											          <a href="javascript:void(0);" class="selection_icon PreMedia_2"></a>
+											        </div>
+											      </div>
+											    </div>
+
+			       								 <div class="row b_margin_0 t_margin_10">
+			       								 	<div class="span">年龄群组</div>
+			       								 </div>
+										  		<div class="row b_margin_0">
+										    	  <div class="item_two">
+										    	    <div class="selection span">
+										      		  <select class="select_all select chzn-select span5" multiple="multiple" name="chosen_test" data-old="all">
+											      		  	<option value="all" selected="selected">全部</option>
+															<option value="503001">18到24</option>
+															<option value="503002">25到34</option>
+															<option value="503003">35到44</option>
+															<option value="503004">45到54</option>
+															<option value="503005">55到64</option>
+															<option value="503006">64以上</option>
+														</select>
+										    		</div>
+										    		<div class="span">
+										        	  <a href="javascript:void(0);" class="selection_icon PreMedia_3"></a>
+										    		</div>
+										    	  </div>
+										    	</div>
+
+										  		<div class="row b_margin_0 t_margin_10">
+										  			<div class="span">地域</div>
+										  		</div>
+										  		<div class="row b_margin_0">
+										    	  <div class="item_two">
+										    		<div class="selection span" id="re_interest">
+											      		 <select class="select_all select span5 chzn-select" data-placeholder="请选择地域"  multiple="multiple" name="chosen_test" data-old="all">
+											      		  	<option value="all" selected="selected">全选</option>
+										                    <option value="1156310000">上海市</option>
+										                    <option value="1156530000">云南省</option>
+										                    <option value="1156150000">内蒙古自治区</option>
+										                    <option value="1156110000">北京市</option>
+										                    <option value="1156220000">吉林省</option>
+										                    <option value="1156510000">四川省</option>
+										                    <option value="1156120000">天津市</option>
+										                    <option value="1156640000">宁夏回族自治区</option>
+										                    <option value="1156340000">安徽省</option>
+										                    <option value="1156370000">山东省</option>
+										                    <option value="1156140000">山西省</option>
+										                    <option value="1156440000">广东省</option>
+										                    <option value="1156450000">广西壮族自治区</option>
+										                    <option value="1156650000">新疆维吾尔自治区</option>
+										                    <option value="1156320000">江苏省</option>
+										                    <option value="1156360000">江西省</option>
+										                    <option value="1156130000">河北省</option>
+										                    <option value="1156410000">河南省</option>
+										                    <option value="1156330000">浙江省</option>
+										                    <option value="1156460000">海南省</option>
+										                    <option value="1156420000">湖北省</option>
+										                    <option value="1156430000">湖南省</option>
+										                    <option value="1156620000">甘肃省</option>
+										                    <option value="1156350000">福建省</option>
+										                    <option value="1156540000">西藏自治区</option>
+										                    <option value="1156520000">贵州省</option>
+										                    <option value="1156210000">辽宁省</option>
+										                    <option value="1156500000">重庆市</option>
+										                    <option value="1156610000">陕西省</option>
+										                    <option value="1156630000">青海省</option>
+										                    <option value="1156230000">黑龙江省</option>
+														</select>
+										    		</div>
+										    	    <div class="span">
+										        	  <a href="javascript:void(0);" class="selection_icon PreMedia_4"></a>
+										    	    </div>
+										    	  </div>
+										        </div>
+
+										      </div>
+											<div class="submit-control" >
+												<div class="outer_cancel">
+													<input class="cancel back_button" onclick="$.hideTips()" type="button" value="重新设置">
+													
+												</div>
+											    <div class="outer_submit">
+											    	<input name="commit" type="submit" value="搜索">
+											    </div>
+											</div>
+											<div style="clear:both;*zoom:1"></div>
+									</div>
+								</div>
+							</div>
+						</form>
+						<div style="clear:both;*zoom:1"></div>
+					</div>
+				<div class="plan-title">
+					<div class="pull-left plan-sub-title">
+						<label>受众人群信息</label>
+					</div>
+					<div class="pull-right">
+						<div class="dropdown" id="export_dropdow">
+						    <a href="#id" data-toggle="dropdown" class="dropdown-pdf"><i class="icon-export-to-nc"></i>输出下载<i class="icon-arrow-down"></i></a>
+						    <ul class="dropdown-menu">
+						      <li>
+						        <div class="white_pointer pointer_position"></div>
+						      </li>
+						      <li class="">
+						        <a href="" id="export_pdf">PDF</a>
+						      </li>
+						      <li class="active">
+						        <a href="" id="export_img">JPG</a>
+						      </li>
+						    </ul>
+						  </div>
+					</div>
+					<div style="clear:both;*zoom:1"></div>
+				</div>
+				<!-- reports -->
+				<div id="for_export_img">
+					<div class="plan-reports" id="reports">
+						<!--
+						<div style="background: url(http://xmostg.optimix.asia/images/shared/components/pre-loading_CN.gif) 50% 50% no-repeat transparent;width:100%;height:100px;top:40%;position:absolute;z-index:9999999"></div>
+					-->
+						<div class="plan-reports-result clearfix">
+							<div class="plan-reports-result-left">
+								<div class="plan-result-text">
+									<div class="result-text-header clearfix">
+										<label  id="date_header">受众人群覆盖范围</label>
+									</div>
+									<div class="result-text-info clearfix x-mt10">
+										<div class="result-text-word word-impr">
+											<label>3,368K</label>
+										</div>
+										
+									</div>
+								</div>
+								<div class="plan-result-text">
+									<div class="result-text-header clearfix">
+										<label id="date_header">性别</label>
+									</div>
+									<div class="result-text-info clearfix x-mt10">
+										<div class="result-text-word word-impr">
+											<div class="result-text-word-content">
+												<div class="vs-left">
+													<p class="titleRed">0%</p>	
+													<p>男性</p>
+												</div>
+												<div class="vs-vs">VS.</div>
+												<div class="vs-right">
+													<p class="titleRed">100%</p>	
+													<p>女性</p>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<div class="plan-result-graph">
+									<div class="result-text-header clearfix">
+										<label id="date_header">年龄段</label>
+									</div>
+									<div class="result-graph-info clearfix x-mt10">
+										<div class="result-graph-word word-impr">
+											<div class="result-graph-word-content">
+												<div class="xmo-bar_per">
+													<span class="name">18~24</span>
+													<span class="result">21.8%</span>
+													<span class="bar_main">
+														<div class="bar_bg"></div>
+														<div class="bar_content">
+															<i style="height: 19.7788px; background: rgb(228, 139, 97);"></i>
+														</div>
+													</span>
+												</div>	
+												<div class="xmo-bar_per">
+													<span class="name">25~34</span>
+													<span class="result">21.8%</span>
+													<span class="bar_main">
+														<div class="bar_bg"></div>
+														<div class="bar_content">
+															<i style="height: 19.7788px; background: rgb(228, 139, 97);"></i>
+														</div>
+													</span>
+												</div>	
+												<div class="xmo-bar_per">
+													<span class="name">35~44</span>
+													<span class="result">21.8%</span>
+													<span class="bar_main">
+														<div class="bar_bg"></div>
+														<div class="bar_content">
+															<i style="height: 19.7788px; background: rgb(228, 139, 97);"></i>
+														</div>
+													</span>
+												</div>	
+												<div class="xmo-bar_per">
+													<span class="name">45~54</span>
+													<span class="result">21.8%</span>
+													<span class="bar_main">
+														<div class="bar_bg"></div>
+														<div class="bar_content">
+															<i style="height: 19.7788px; background: rgb(228, 139, 97);"></i>
+														</div>
+													</span>
+												</div>	
+												<div class="xmo-bar_per">
+													<span class="name">55~64</span>
+													<span class="result">21.8%</span>
+													<span class="bar_main">
+														<div class="bar_bg"></div>
+														<div class="bar_content">
+															<i style="height: 19.7788px; background: rgb(228, 139, 97);"></i>
+														</div>
+													</span>
+												</div>	
+												<div class="xmo-bar_per">
+													<span class="name">65+</span>
+													<span class="result">21.8%</span>
+													<span class="bar_main">
+														<div class="bar_bg"></div>
+														<div class="bar_content">
+															<!--height=130*0.218=-->
+															<i style="height: 28.34px; background: rgb(228, 139, 97);"></i>
+														</div>
+													</span>
+												</div>	
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<div class="plan-result-graph graph-region" style="">
+									<div class="result-text-header clearfix">
+										<label id="date_header">地域</label>
+									</div>
+									<div class="result-graph-info clearfix x-mt10">
+										<div class="result-graph-word word-impr">
+											<div class="result-graph-word-content">
+												<div class="xmo-line_per">
+													<span class="name">大连</span>
+													<span class="result">21.8%</span>
+													<span class="line_main">
+														<div class="xmo-progress-line left">
+												   			<div style="width: 50%;" class="bar"></div>
+													  	</div>
+													</span>
+												</div>	
+												<div class="xmo-line_per">
+													<span class="name">广东</span>
+													<span class="result">21.8%</span>
+													<span class="line_main">
+														<div class="xmo-progress-line left">
+												   			<div style="width: 50%;" class="bar"></div>
+													  	</div>
+													</span>
+												</div>	
+												<div class="xmo-line_per">
+													<span class="name">浙江</span>
+													<span class="result">21.8%</span>
+													<span class="line_main">
+														<div class="xmo-progress-line left">
+												   			<div style="width: 50%;" class="bar"></div>
+													  	</div>
+													</span>
+												</div>	
+												<div class="xmo-line_per">
+													<span class="name">青岛</span>
+													<span class="result">40.0%</span>
+													<span class="line_main">
+														<div class="xmo-progress-line left">
+												   			<div style="width: 40%;" class="bar"></div>
+													  	</div>
+													</span>
+												</div>
+												<div class="xmo-line_per">
+													<span class="name">北京</span>
+													<span class="result">40.0%</span>
+													<span class="line_main">
+														<div class="xmo-progress-line left">
+												   			<div style="width: 40%;" class="bar"></div>
+													  	</div>
+													</span>
+												</div>
+												<div class="xmo-line_per">
+													<span class="name">安徽</span>
+													<span class="result">40.0%</span>
+													<span class="line_main">
+														<div class="xmo-progress-line left">
+												   			<div style="width: 40%;" class="bar"></div>
+													  	</div>
+													</span>
+												</div>
+												<div class="xmo-line_per">
+													<span class="name">重庆</span>
+													<span class="result">40.0%</span>
+													<span class="line_main">
+														<div class="xmo-progress-line left">
+												   			<div style="width: 40%;" class="bar"></div>
+													  	</div>
+													</span>
+												</div>	
+												<div class="xmo-line_per">
+													<span class="name">湖北</span>
+													<span class="result">10.8%</span>
+													<span class="line_main">
+														<div class="xmo-progress-line left">
+												   			<div style="width: 10%;" class="bar"></div>
+													  	</div>
+													</span>
+												</div>	
+												<div class="xmo-line_per">
+													<span class="name">其他</span>
+													<span class="result">21.8%</span>
+													<span class="line_main">
+														<div class="xmo-progress-line left">
+												   			<div style="width: 20%;" class="bar"></div>
+													  	</div>
+													</span>
+												</div>	
+												
+											</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+							<div class="plan-reports-result-right">
+								<div class="plan-result-gategory">
+									<div class="result-text-header clearfix">
+										<label id="date_header">兴趣类型</label>
+									</div>
+									<div class="result-gategory-info clearfix x-mt10">
+										<div id="container"></div>
+										
+									</div>
+								</div>
+								<div class="plan-result-table">
+									<div class="result-text-header clearfix">
+										<label id="date_header">受众人群兴趣标签</label>
+									</div>
+									<div class="result-gategory-info clearfix x-mt10">
+										<div class="audience-result">
+											<label><span class="x-tip">1</span>时尚时尚最时尚首饰饰品首饰饰品</label>
+											<ul>
+												<li>1.服装</li>
+												<li>2.鞋包</li>
+												<li>3.首饰饰品首饰饰品首饰饰品首饰饰品</li>
+												<li>4.奢侈品</li>
+											</ul>
+										</div>
+										<div class="audience-result">
+											<label><span class="x-tip">2</span>美容及化妆品</label>
+											<ul>
+												<li>1.彩妆</li>
+												<li>2.护肤</li>
+											</ul>
+										</div>
+										<div class="audience-result">
+											<label><span class="x-tip">3</span>旅游商旅</label>
+											<ul>
+												<li>1.酒店</li>
+												<li>2.旅游目的地</li>
+											</ul>
+										</div>
+									</div>
+									<div class="result-gategory-info clearfix x-mt10">
+										<div class="audience-result">
+											<label><span class="x-tip">4</span>健康医疗</label>
+											<ul>
+												<li>1.整形整容</li>
+												<li>2.保健养生</li>
+												<li>3.情感心理</li>
+												<li>4.两性健康</li>
+											</ul>
+										</div>
+										<div class="audience-result">
+											<label><span class="x-tip">5</span>食品美食</label>
+											<ul>
+												<li>1.仓管美食</li>
+												<li>2.生鲜食品</li>
+												<li>3.休闲食品</li>
+												<li>4.保健食品</li>
+												<li>5.地方特产</li>
+											</ul>
+										</div>
+										<div class="audience-result">
+											
+										</div>
+									</div>
+										
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+		<div >
+			<img src="#" id="result_jpg"/>
+		</div>
+		<div class="clearfooter"></div>
+			<div class="myfooter">
+			    <label class="x-footer">
+			      Copyright © 2015  iClick Interactive Asia Limited. All Rights Reserved.
+			        <span>| <a target="_blank" href="/zh-cn/admin/send_file_upload_release_notes">产品更新日志
+			        </a></span>
+			      <span>| <a target="_blank" href="/templates/xmo_help.pdf" onclick="_xmoIstag1();">幫助中心</a></span>
+			      <span>| <a href="/zh-cn/privacy_policy">隐私声明</a></span>
+			    </label>
+			    <label class="x-footer">10.1.1.63 v9.26.0(建议采用浏览器: Internet Explorer 8.0 and 9.0, Chrome 8.0+, Firefox 3.5+, Safari 1.0+, Opera V11+.)</label>
+			  </div>
+ 
+    <script type="text/javascript">
+    	
+    	$(function(){
+    		$("[name='chosen_test']").chosen();
+    		$("[data-toggle='tooltip']").tooltip();
+
+    		$(".selection-area").find("[type='radio']").on("click",function(){
+    			$(this).parents(".plan-content").find(".tab-pane").removeClass("active").removeClass("in");
+    			var id=$(this).attr("data-value");
+    			$("#"+id).addClass("active").addClass("in");
+    		});
+    		$('[name="commit"]').click(function(){
+    			document.getElementById('reports').scrollIntoView();
+    		})
+
+    		
+    		 // 导出JPG
+		    $('#export_img').click(function(e){
+		      	e.preventDefault();
+		      	$("html,body").scrollTop(0)
+		      	// $('#sub_section_gray').addClass('export_now');
+		      	$("#container").children().append('<canvas id="result_canvas"></canvas>');
+	       		var svgHtml = $("#container").children().find("svg").prop("outerHTML");
+	       		canvg(document.getElementById("result_canvas"),svgHtml);
+	       		$("#container").children().find("svg").hide();
+
+		   		html2canvas($('#for_export_img')[0], {
+		   		  	onrendered: function(canvas) {
+					        var datas = canvas.toDataURL("image/png");
+					        var base64 = datas.replace(/^data:image\/(png|jpg);base64,/, "");
+					        // $('#sub_section_gray').removeClass('export_now');
+					        // console.log(base64);
+					        $("#result_jpg").attr("src","data:image/png;base64,"+base64);
+					        $("#container").children().find("svg").show();
+					        $("#container").children().find("canvas").remove();
+		   		  }
+		   		});
+		    });
+    	})
+    	 $(document).on('change','.select_all',function(){
+		      var valAry = $(this).val();
+		      if(!valAry) return;
+		      var old = $(this).attr('data-old') || '';
+		      var newStr = "";
+		      for (var i = 0; i < valAry.length; i++) {
+		      	var value = valAry[i];
+		      	var values = value.split(",");
+		      	newStr+=",";
+		      	//代表是多选混合选项
+		      	if (values.length>1) {
+		      		newStr +=values;
+		      	}else{
+		      		newStr +=value;
+		      	}
+
+		      };
+		      if (newStr) {
+			      $(this).attr('data-old',newStr.substring(1));
+			      $(this).val(newStr.substring(1).split(",")).trigger("liszt:updated");
+			  }	
+		    })
+
+	 //   var multi = new multilayer({
+		//   container : $("#multilayer"),
+		//   // lang : 'EN',
+		//   lang : "CN", //"CN" "EN"
+		//   values : [{"name":"高档汽车","name_en":"High-End Cars","audience_id":1194,"parent_id":0,"children":[]},{"name":"中档汽车","name_en":"Mid-range Cars naaaaaaaaaa2123123123123aaaa","audience_id":1195,"parent_id":0,"children":[]},{"name":"入门级汽车","name_en":"Economy Cars","audience_id":1204,"parent_id":0,"children":[]},{"name":"二手车","name_en":"Used Cars","audience_id":1197,"parent_id":0,"children":[]},{"name":"汽车租赁","name_en":"Rental Cars","audience_id":1198,"parent_id":0,"children":[]},{"name":"豪华汽车","name_en":"Luxury Cars","audience_id":1199,"parent_id":0,"children":[]},{"name":"汽车保险","name_en":"Auto Insurance","audience_id":1200,"parent_id":0,"children":[]},{"name":"日本韩国车","name_en":"Japan & Korea (Car)","audience_id":1201,"parent_id":0,"children":[]},{"name":"德国车","name_en":"Germany (Car)","audience_id":1202,"parent_id":0,"children":[]},{"name":"美国车","name_en":"United States (Car)","audience_id":1203,"parent_id":0,"children":[]},{"name":"国产车","name_en":"China (Car)","audience_id":1205,"parent_id":0,"children":[]},{"name":"三厢车","name_en":"Sedan","audience_id":1206,"parent_id":0,"children":[]},{"name":"轿跑车","name_en":"Coupe","audience_id":1207,"parent_id":0,"children":[]},{"name":"两厢车","name_en":"Hatchback","audience_id":1208,"parent_id":0,"children":[]},{"name":"越野车","name_en":"SUV","audience_id":1210,"parent_id":0,"children":[]},{"name":"面包车","name_en":"Van","audience_id":1211,"parent_id":0,"children":[]},{"name":"旅行车","name_en":"Station Wagon","audience_id":1212,"parent_id":0,"children":[]},{"name":"敞篷车","name_en":"Convertible","audience_id":1214,"parent_id":0,"children":[]},{"name":"多功能车","name_en":"MPV","audience_id":1215,"parent_id":0,"children":[]},{"name":"跑车","name_en":"Sports Car","audience_id":1216,"parent_id":0,"children":[]},{"name":"护肤","name_en":"Skin Care","audience_id":1217,"parent_id":0,"children":[{"name":"抗衰老去皱","name_en":"Anti-aging / Wrinkles","audience_id":1218,"parent_id":1217},{"name":"补水保湿","name_en":"Hydration","audience_id":1219,"parent_id":1217},{"name":"美白提亮祛斑","name_en":"Brightening & Whitening","audience_id":1220,"parent_id":1217},{"name":"隔离防晒","name_en":"Sunscreen","audience_id":1221,"parent_id":1217},{"name":"清洁卸妆","name_en":"Cleansing & Makeup Removal","audience_id":1222,"parent_id":1217},{"name":"男士护肤","name_en":"Men's Skincare","audience_id":1223,"parent_id":1217},{"name":"祛痘","name_en":"Acne Removing","audience_id":1224,"parent_id":1217},{"name":"抗过敏","name_en":"Anti-allergy","audience_id":1225,"parent_id":1217},{"name":"眼部护理","name_en":"Eyecare","audience_id":1226,"parent_id":1217},{"name":"身体护肤","name_en":"Bodycare","audience_id":1227,"parent_id":1217}]}],
+		//    selected:["1218","1219","1220","1221","1222","1223","1224","1225","1226"],
+		//   // ["66a1","66a11","66a111","66a1111","66a1112","66a13","66a14","66a3"],//
+		//   	result:$("#result"),
+		//   	callback:callBackFun
+
+		  
+		// })
+		function callBackFun(ids){
+			console.log(ids);
+		}
+
+		//charts
+		$(function () {
+
+		    var chart = new Highcharts.Chart({
+
+		        chart: {
+		            polar: true,
+		            type: 'area',
+		            renderTo:'container'
+
+		        },
+
+		        title: "",
+
+		        pane: {
+		            size: '80%'
+		        },
+
+		        xAxis: {
+		        	categories:["时尚","食品美食","健康医疗","旅游商旅","美容及化妆品"],
+		        	labels:{
+		        		useHTML:true,
+		        		formatter:function(){
+		        			var yData = this.chart.series[0].yData;
+		        			var xData = this.axis.categories;
+		        			var yValue;
+		        			for (var i = 0; i < xData.length; i++) {
+		        				if(this.value==xData[i]){
+		        					yValue = yData[i];
+		        					break;
+		        				}
+		        			};
+		        			return '<div style="width:100px;text-align:center"><span style="font-size:14px;">'+this.value+'</span><br><span style="color:red;font-size:18px;">'+yValue+'%</span></div>'
+		        		}
+		        	},
+		            // categories: ['<span style="font-size:14px;">Automobile</span><br><span style="color:red;font-size:18px;">42%</span>', '<span style="font-size:14px;">Sports & Fitness</span><br><span style="color:red;font-size:18px;">42%</span>', '<br><span style="color:red;font-size:18px;">42%</span><br><span style="font-size:14px;width:60px;">Leisure Travel & Business</span>', '<br><span style="color:red;font-size:18px;">12%</span><br><span style="font-size:14px;">Alcohol</span>',
+		            //         '<span style="font-size:14px;">Personal Finance</span><br><span style="color:red;font-size:18px;">22%</span>'],
+		            tickmarkPlacement: 'on',
+		            lineWidth: 0
+		        },
+
+		        yAxis: {
+		            gridLineInterpolation: 'polygon',
+		            lineWidth: 0,
+		            min: 0
+		        },
+
+		        tooltip: {
+		           enabled:false 
+		        },
+
+		        legend: {
+		            
+		            enabled:false
+		        },
+
+		        series: [{
+		            name: 'Allocated Budget',
+		            data: [42, 42, 42, 12, 22],
+		            pointPlacement: 'false',
+		            color: '#ef4136',
+		            fillOpacity:'0.6'
+		        }],
+		        credits :{
+		        	enabled:false
+		        }
+
+		    });
+
+		});
+		
+    </script>
+       </body>
+</html>

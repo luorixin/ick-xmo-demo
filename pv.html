@@ -1,0 +1,476 @@
+
+
+  
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>PV趋势</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv="Cache-Control" content="no-store" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+<meta name="viewport" content="initial-scale=1,maximum-scale=1"/>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<script type="text/javascript" src="js/require.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+
+	
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1"/>
+	
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/highcharts.js"></script>
+	
+<script type="text/javascript">
+		function drawChart(){
+			
+		
+				var d1 = {"0000":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]};
+				var year=2015;
+				var month=7-1;
+				var day=14;
+				var json ;
+				var keyname;
+				
+				$.each(d1, function(key, list) {
+					keyname = key;
+					json = eval(list);
+				});
+		
+				
+			 new Highcharts.Chart({
+				  chart: {
+					  renderTo:'container'
+		            },
+			        title: {
+			            text: ''
+			        },
+			        subtitle: {
+			            text: ''
+			        },
+			        xAxis: {
+				           type: 'datetime',
+				           tickInterval:1 * 24 * 3600000,
+				            tickWidth: 0,
+				            dateTimeLabelFormats:{
+					        	day:'%e. %b'
+					        	},
+					        	tickWidth: 0,
+					        
+		                          labels : {
+										//y : 50,
+										//rotation : 30,
+										//step : 96,
+										enabled : true,
+									}
+								},
+
+								yAxis : {
+									type : 'logarithmic',
+									minorTickInterval : 100,
+									max : 99999,
+									title : {
+										enabled : false
+									},
+									plotLines : [ {
+										value : 0,
+										width : 1,
+										color : '#808080'
+									} ]
+								},
+								legend : {
+									enabled : false
+								},
+								plotOptions : {
+									series : {
+										marker : {
+											enabled : false
+										}
+									},
+									area : {
+										fillColor : {
+											linearGradient : {
+												x1 : 0,
+												y1 : 0,
+												x2 : 1,
+												y2 : 1
+											},
+											stops : [
+													[
+															0,
+															Highcharts
+																	.getOptions().colors[0] ],
+													[
+															1,
+															Highcharts
+																	.Color(
+																			Highcharts
+																					.getOptions().colors[0])
+																	.setOpacity(
+																			0)
+																	.get('rgba') ] ]
+										},
+										marker : {
+											radius : 1
+										},
+										lineWidth : 1,
+										states : {
+											hover : {
+												lineWidth : 1
+											}
+										},
+										threshold : null
+									}
+								},
+								credits : {
+									enabled : false
+								},
+								legend : {
+									layout : 'vertical',
+									align : 'right',
+									verticalAlign : 'middle',
+									borderWidth : 0
+								},
+								series : [ {
+									name : keyname,
+									type : 'line',
+									pointInterval : 900000,
+									pointStart : Date.UTC(year, month, day),
+									// pointStart:1,
+									data : json
+								} ]
+							});
+		}
+		$(function(){
+			//左边高亮显
+			$($(".x-left li")[0]).removeClass("selected");
+			$("#li007").addClass("selected");
+			var arr=[],pObj={},cObj={},dObj1={},dObj2={};
+			dObj1=cssObj('dateStart',"2015-07-12","date","col-lg-11","col-xs-8 col-lg-2","col-xs-6 col-lg-1");
+			dObj2=cssObj('dateEnd',"2015-07-14","date","col-lg-11","col-xs-8 col-lg-2","col-xs-6 col-lg-1");
+			cObj=cssObj('cid',"0000","input","col-lg-11","col-xs-12 col-lg-3","col-xs-6 col-lg-1");
+			pObj=cssObj('pid','0000',"input","col-lg-11","col-xs-12 col-lg-3","col-xs-6 col-lg-1");
+			arr.push(cObj);
+			arr.push(pObj);
+			arr.push(dObj1);
+			arr.push(dObj2);
+			changeFilterCss(arr,"l_pvMonitoring",callback);
+			drawChart();
+		})
+		function redraw(){
+			
+			$("#container").empty();
+			$("#container").removeAttr("data-highcharts-chart");
+            drawChart();
+		}
+	</script>
+	
+	
+	
+
+</head>
+
+<body>
+    
+
+<div class="myheading">
+	<div style="padding-bottom:4px;"></div>
+	<nav class="navbar navbar-inverse">
+		<div class="x-navbar">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed my-collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+				<a href="#" class="navbar-brand" data-toggle="offcanvas">
+					<img src="images/logo1.png" alt="" style="width:118px">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<!-- Single button -->
+				<div class="x-user-main  navbar-right ">
+					<div class="x-user-con">
+							<span class="glyphicon glyphicon-user x-user "></span>
+							<span class="x-user-dis">欢迎，管理员:<br/>jacob.sun<br/> </span>
+							<span class="glyphicon glyphicon-triangle-bottom x-user-arrow"></span>
+					</div>
+					<ul class="x-user-list">
+						<li class="">
+							<span class="glyphicon glyphicon-log-out"></span>
+							<a class="x-user-config" href="/monitor/user_loginOut">登出</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			</div>
+		</div>
+	</nav>
+</div>
+	<div class="x-main">
+		<div class="row row-offcanvas row-offcanvas-left">
+		  
+
+<div class="col-xs-3 col-sm-2 sidebar-offcanvas x-left">
+		<ul class="x-menu">
+		<li id="li000" class="selected">
+			<a href="/monitor/i_getActives">
+				<span class="glyphicon glyphicon-calendar"></span>
+				<span class="x-m8">推广计划</span>
+			</a>
+		</li>
+		<li id="li001">
+			<a href="/monitor/creatives_getCreative">
+			 <span class="glyphicon glyphicon-duplicate"></span>
+			<span class="x-m8">推广计划信息</span>
+			</a>
+		</li>
+		<li id="li002">
+			<a href="/monitor/creatives_getCreativeAsset">
+			 <span class="glyphicon glyphicon-tags"></span>
+			<span class="x-m8">素材信息</span>
+			</a>
+		</li>
+		<li id="li003">
+			<a href="/monitor/pv_getImp">
+			 <span class="glyphicon glyphicon-flash"></span>
+		<!--某广告位下全部推广计划-->	<span class="x-m8">展现数量</span>
+			</a>
+		</li>
+		<li id="li004">
+			<a href="/monitor/backfill_getBfImp">
+			 <span class="glyphicon glyphicon-eye-open"></span>
+			<span class="x-m8">PV</span>
+			</a>
+		</li>
+	
+		<li id="li005">
+			<a href="/monitor/i_getWeight">
+			 <span class="glyphicon glyphicon-tasks"></span>
+			<!--某广告位全部推广计划--><span class="x-m8">CPM权重</span>
+			</a>
+		</li>
+		<li id="li006">
+			<a href="/monitor/i_getPlanementByCreatives">
+			 <span class="glyphicon glyphicon-stats"></span>
+			<!--取某个推广计划在所有广告位下的WEIGHT趋势图 --><span class="x-m8">WEIGHT趋势图</span>
+			</a>
+		</li>
+		<li id="li007">
+			<a href="/monitor/l_pvMonitoring">
+			 <span class="glyphicon glyphicon-stats"></span>
+			<span class="x-m8">PV趋势图</span>
+			</a>
+		</li>
+		<li id="li008">
+			<a href="/monitor/l_impMonitoring">
+			 <span class="glyphicon glyphicon-stats"></span>
+			 <span class="x-m8">imp监控</span>
+			</a>
+		</li>
+		<li id="li009">
+			<a href="/monitor/p_getPInfo">
+			 <span class="glyphicon glyphicon-stats"></span>
+			 <span class="x-m8">广告位信息</span>
+			</a>
+		</li>
+		<li id="li010">
+			<a href="/monitor/im_impratio">
+			 <span class="glyphicon glyphicon-stats"></span>
+			 <span class="x-m8">CPM的IMP比值</span>
+			</a>
+		</li>
+	</ul>
+</div>
+
+          
+	<div class="x-body col-xs-12 col-sm-10">
+
+			<div class="x-show-control"></div>
+			
+			<div class="x-body-container">
+				<div class="x-nav-title">
+					<span class="glyphicon glyphicon-stats"></span>
+					<span class="x-m8 x-label">日期：2015-07-12~2015-07-14&nbsp &nbsp PV：0000&nbsp&nbsp 0000 下的PV </span>
+				</div>
+				
+
+<form id="" action="" method="post" data-id="optForm">
+<div class=" spacer10"></div>
+<div class="" style="position:relative;overflow:hidden;background: #ccc;padding-right: 10px;">
+	
+	<div class="col-lg-10" id="filterCon" style="position:relative;overflow:hidden;margin-bottom:10px">
+		
+	</div>
+</div>
+</form>
+
+
+
+
+<script type="text/javascript">
+	//筛选元素对于对象,根据type不同生产不同html
+	function cssObj(name,value,type,concss,inputcss,btncss){
+		var obj ={};
+		obj.name=name;
+		obj.value=value;
+		obj.type=type;
+		obj.concss = concss;
+		obj.inputcss = inputcss;
+		obj.btncss = btncss;
+		return obj;
+	}
+	//不同页面的过滤条件是不一样的
+	function changeFilterCss(arr,action,callback){
+		var labelHtml,spanHtml,inputHtml,i,obj,date,diff=10,d='开始时间',hideCss,conCss;
+		if(arr!=null && typeof(arr)!="undefined"){
+			for(i=0;i<arr.length;i++){
+				obj = arr[i];
+				if(typeof(obj.concss)!="undefined" && $("#filterCon").prev().length===0){
+					conCss = obj.concss.split('-')[2];
+					conCss = "col-lg-"+(12-Number(conCss));
+					$("#filterCon").before("<div class='"+conCss+"' ></div>");
+				}
+				$("#filterCon").attr("class",obj.concss);
+				//时间选择框的处理
+				if(obj.type==="date"){
+					if(arr.length===4){
+						hideCss="hidden-lg";
+					}
+					
+					if(obj.name==='dateEnd'){
+						if(arr.length==4){
+							//$("#filterCon","[data-id='optForm']").append('<div class="left visible-lg-inline"  name="dateEnd" style="padding:0px 10px;line-height:42px;height:32px;">-</div> ');
+						}
+						d="截止时间";
+					}
+					inputHtml=$('<div class="col-xs-4 hidden-lg"></div><label class="'+obj.inputcss+'" style="text-align: right;margin-top:10px"><span class="'+hideCss+'">'+d+':</span><span style="display: inline-block;vertical-align: middle;"><input class="bTextbox date left my-bTextbox" type="date" data-orig-type="date"  name="'+obj.name+'" value="'+obj.value+'" data-value="" max=""></span></label>');
+					
+					$("#filterCon","[data-id='optForm']").append(inputHtml);
+				}else if(obj.type==="input"){
+					labelHtml= $("<label class='"+obj.inputcss+"' style='text-align:right;margin-top:10px'></label>");
+					spanHtml = $("<span>"+obj.name+":</span>");
+					inputHtml = $('<input class="bTextbox my-bTextbox" value="'+obj.value+'" name="'+obj.name+'" style="width:150px;" placeholder="'+obj.name+'">');
+					$(labelHtml).append(spanHtml);
+					$(labelHtml).append(inputHtml);
+					//$(labelHtml).prepend("<div class='visible-xs-block'><br>"+obj.name+"：</div>");
+					$("#filterCon","[data-id='optForm']").append(labelHtml);
+				}
+				
+			}
+			$("#filterCon","[data-id='optForm']").append('<div class="col-xs-6 col-lg-1"></div><div class="'+obj.btncss+'"  style="margin-top:10px"><input class="bButton bButton24 " style="float:right" type="submit" value="查询"></div>');
+			
+			if(action!=""){
+				$("[data-id='optForm']").attr("action",action);
+			}
+				
+			
+		}
+		// 现在运行回调函数
+	    if (typeof callback === 'function') {
+	      callback(diff);
+	    }
+		
+	}
+	function callback(diff){
+		require(["calendar"], function(c,pagination) {
+			
+			//set date
+			var fDay = 0;
+		    $.tools.dateinput.localize("zh", {
+		        months: "一月,二月,三月,四月,五月,六月,七月,八月,九月,十月,十一月,十二月",shortMonths: "一,二,三,四,五,六,七,八,九,十,十一,十二",days: "星期日,星期一,星期二,星期三,星期四,星期五,星期六",shortDays: "周日,周一,周二,周三,周四,周五,周六"
+		    });
+		    fDay = 1;
+		
+		    $(":date").dateinput({ trigger: true, format: 'yyyy-mm-dd', lang: 'zh', firstDay: fDay,offset: [0, -100]  });
+		    $(":date").bind("onShow onHide", function()  {
+		        $(this).parent().toggleClass("active"); 
+		    });
+		    if ($(":date").length != 0) {
+		    	 if ($(":date").length >1) {
+	            	
+	           		var maxDiff=new Date($(":date:first").data("dateinput").getValue());
+	           		maxDiff.setDate(maxDiff.getDate()+diff);
+	           		$(":date:last").data("dateinput").setMax(maxDiff, true);
+	            }
+		    	 $(":date:first").data("dateinput").change(function() {
+		            // we use it's value for the seconds input min option
+		            if ($(":date").length >1) {
+		            	$(":date:last").data("dateinput").setMin(this.getValue(), true);
+		            	
+		           		var maxDiff=new Date(this.getValue());
+		           		maxDiff.setDate(maxDiff.getDate()+diff);
+		           		$(":date:last").data("dateinput").setMax(maxDiff, true);
+		            }
+		        });
+		        $(":date:last").data("dateinput").change(function() {
+		            // we use it's value for the first input max option
+		            $(":date:first").data("dateinput").setMax(this.getValue(), true);
+		        });
+		    }
+		});
+		
+	}
+	
+</script>
+				<div class="spacer15"></div>
+				<div id="container">
+				</div>
+			</div>
+
+		</div>
+ 
+         </div>  
+	</div>
+	<div class="clear"></div>
+	
+
+<div class="clear"></div>
+<div class="row row-offcanvas row-offcanvas-left">
+<div class="col-xs-3 col-sm-2 sidebar-offcanvas"></div>
+<div class="col-xs-12 col-sm-10">
+<div class="myfooter">
+	<div class="spacer40"></div>
+		© 2009 - 2015 iClick Interactive Asia Limited. All Rights Reserved. 
+</div>
+</div>
+</div>
+	<script type="text/javascript">
+			require(["jquery","pagination","bootstrap","offcanvas"], function($,pagination) {
+    			$(".x-show-control").click(function(){
+    				if($("body.x-hide").length>0){
+    					
+    					$("body").removeClass("x-hide");
+    					$(".x-body").removeClass("col-lg-12").addClass("col-lg-10");
+    					$(".x-left").show();
+    				}else{
+    					$(".x-left").hide();
+    					$(".x-body").removeClass("col-lg-10").addClass("col-lg-12");
+    					$("body").addClass("x-hide");
+    				}
+    				//重绘图标，自适应宽度
+    				typeof(redraw)==="function"?redraw():null;
+    			})
+    			pagination.createItem({
+			        container:$("#pageDes"),
+			        paginTable:$("#paginationTable"),
+			        pageNum: 1,
+			        pageSize: 20
+				});
+    			
+    			/*每个页面单独设置
+    			$($(".x-left li")[0]).addClass("selected");
+    			*/
+    			
+			});
+			
+	</script>
+</body>
+</html>

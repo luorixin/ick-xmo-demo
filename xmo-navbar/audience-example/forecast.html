@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>客户管理</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Cache-Control" content="no-store" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1"/>
+	 <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+  
+	
+
+	<link rel="stylesheet" type="text/css" href="http://xmostg.optimix.asia/stylesheets/nav.css">
+	<link rel="stylesheet" type="text/css" href="http://xmostg.optimix.asia/stylesheets/xmo/application.css?9250">
+	<link rel="stylesheet" type="text/css" href="http://xmostg.optimix.asia/stylesheets/xmo/xmo_components.css?9250">
+
+	
+
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+
+	 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	 
+	<style type="text/css">
+		.forecast-report{
+			margin-top:20px;
+			position: relative; 
+		}
+		.forecast-result-graph{
+			width: 33.33333%;
+			float:left;
+			position: relative;
+			box-sizing:border-box;
+			padding: 0 5px;
+			height: 200px;
+		}
+		.forecast-report-result .forecast-result-graph:first-child{
+			padding: 0 10px 0 0;
+
+		}
+		.forecast-report-result .forecast-result-graph:last-child{
+			padding: 0 0 0 10px;
+		}
+		.forecast-result-text{
+			border: 2px solid #f2f2f2;
+			height: 100%;
+			box-sizing:border-box;
+		}
+		.forecast-text-header{
+			text-align: center;
+			height: 30px;
+		}
+		.forecast-text-header label{
+			line-height: 30px;
+			font-weight: bold;
+		}
+		.forecast-text-info{
+			height: 165px;
+		}
+		.forecast-text-info .forecast-text-word{
+			text-align: center;
+			width: 100%;
+			position: relative;
+		}
+		.forecast-text-info .forecast-text-word label{
+			line-height: 170px;
+			font-size: 50px;
+			color: #ef4136;
+		}
+		.plan-reports-bg-eye {
+		    background: url("images/icon_impr.png") no-repeat center transparent;
+		}
+		.forecast-text-info .forecast-text-tag{
+			text-align: left;
+			margin: 0 10px;
+		}
+		.forecast-tag{
+			min-width: 10px;
+			padding: 7px;
+			margin: 3px;
+			font-size: 12px;
+			line-height: 1;
+			color: #333;
+			text-align: center;
+			border-radius: 18px;
+			white-space: nowrap;
+			background: #f2f2f2;
+			cursor: pointer;
+			display: inline-block;
+		}
+		.forecast-tag:selected{
+			background: #e3e3e3;
+		}
+		.forecast-tag:hover{
+			background: #e3e3e3!important;
+			color: #333!important;
+		}
+		.forecast-tag.disabled{
+			background: #fff;
+			border: 1px solid #f2f2f2;
+			color:#ccc;
+		}
+		.forecast-tag.more{
+			background: #fff;
+			border: 1px solid #f2f2f2;
+			color: #333;
+		}
+		.forecast-result-top{
+			height: 50%;
+			margin: 0 10px;
+			border-bottom: 1px solid #f2f2f2;
+		}
+		.forecast-result-bottom{
+			height: 50%;
+			margin: 0 10px;
+			border-top: 1px solid #f2f2f2;
+		}
+	</style>
+	
+</head>
+    <body>
+    	<div class="container">
+	    	<!--头部-->
+	    	<div class="myheading">
+			  <nav class="navbar navbar-inverse">
+			    <div class="x-navbar">
+			    <div class="container-fluid">
+			      <div class="navbar-header">
+			        <a href="http://xmo.optimix.asia/zh-cn/campaigns/cross_marketplace_dashboard?client_id=1110" class="navbar-brand" data-toggle="offcanvas">
+			          <img src="images/logo1.png" alt="" style="width:118px">
+			        </a>
+			      </div>
+			        
+			      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">  
+			        <!-- Single button -->
+			        <div class="x-user-main x-search">
+			          <div class="x-user-con x-filter">
+			              <span class="x-top-search-title">
+			                <label style="font-size:12px;">客户</label>
+			                
+			                <label class="x-top-search-main xmo-tooltip" data-position="right" data-width="300">
+			                  <span style="font-weight:bolder">iclick</span>
+			                  
+			                </label>
+			                
+			                  <a href="http://xmo.optimix.asia/zh-cn/clients/1110/edit"><i class="icon-setup icon_act"></i></a>
+			                  
+			              </span>
+			              <span class="x-user-arrow icon-dropdown"></span>
+			          </div>
+			          <div class="x-user-list x-top-search-list">
+			            <span class="nav-arrow"></span>
+			            <div class="x-top-content">
+			              <div class="plus-button">
+			                <a href="http://xmo.optimix.asia/zh-cn/clients/new">
+			                  <i class="plus-ico"></i><span>客户</span>
+			                </a>
+			              </div>
+			              <hr>
+			              <div class="x-top-recent">
+			                <label>最近浏览</label>
+			                <ul>
+			                  
+			                  <li><a href="#" class="client_link" id="1114">
+			                    <span class="xmo-tooltip" data-position="top" data-width="300">
+			                    RegalHotel
+			                    
+			                    </span></a>
+			                  </li>
+			                  
+			                  <li><a href="#" class="client_link" id="1307">
+			                    <span class="xmo-tooltip" data-position="top" data-width="300">
+			                    平安好盈
+			                    
+			                    </span></a>
+			                  </li>
+			                  
+			                  <li><a href="#" class="client_link" id="1110">
+			                    <span class="xmo-tooltip" data-position="top" data-width="300">
+			                    iclick
+			                    
+			                    </span></a>
+			                  </li>
+			                  
+			                </ul>
+			                <hr>
+			              </div>
+			              
+			            <div class="x-top-search">
+			              <div class="x-top-search-search">
+			                <input class="input-search" placeholder="搜索客户">
+			              </div>
+			            </div>
+			              <div class="x-top-result">
+			                <label>所有客户</label>
+			                <ul>
+			                  
+			                  <li><a href="#" class="client_link" id="1316">
+			                    <span class="xmo-tooltip" data-position="top" data-width="300">
+			                    new_client_from_new_nav
+			                    
+			                    </span></a>
+			                  </li>
+			                  
+			                  <li><a href="#" class="client_link" id="1315">
+			                    <span class="xmo-tooltip" data-position="top" data-width="300">
+			                    深圳移动12月
+			                    
+			                    </span></a>
+			                  </li>
+			                  
+			                
+			                  
+			                </ul>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+			        
+			        <div class="x-top-menu">
+			          <ul class="nav navbar-nav">
+			            <li class="selected"><a href="http://xmo.optimix.asia/zh-cn/campaigns/cross_marketplace_dashboard?client_id=1110">推广计划</a></li>
+			            
+			            <li class="">
+			              
+			              <a href="http://xmo.optimix.asia/zh-cn/clients/1110/goalinfos">资源库</a>
+			              <ul class="dropdown-top-menu" aria-labelledby="dropdownMenu1">
+			                  <span class="nav-arrow"></span>
+			                  <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/goalinfos">追踪代码</a>
+			                    <ul class="sub-top-menu ">
+			                      <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/goalinfos">网站转化路径</a></li>
+			                      <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/universal_tag">通用代码</a></li>
+			                      <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/goalevents">活动设置</a></li>
+			                      <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/virtualtags">虚拟标签</a></li>
+			                      <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/transaction_report">活动日志</a></li>
+			                      <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/ip_filters">排除 IP 地址</a></li>
+			                      <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/valid_domains">域验证</a></li>
+			                      
+			                      <li><a href="/zh-cn/shorten_url?client_id=1110">转换短地址</a></li>
+			                     
+			                    </ul> 
+			                    <span class="caret-right"></span>
+			                  </li>
+			                  
+			                  <li>
+			                    <a href="http://xmo.optimix.asia/zh-cn/clients/1110/audiences">目标人群</a>
+			                  </li>
+			                  
+			                </ul>
+			            </li>
+			            <li class=""><a href="http://xmo.optimix.asia/zh-cn/clients/1110/schedule_reports/generate_report">报表</a>
+			              <ul class="dropdown-top-menu" aria-labelledby="dropdownMenu1">
+			                <span class="nav-arrow"></span>
+			                <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/schedule_reports/generate_report">计划分析</a></li>
+			                <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/notifications">通知</a></li>
+			                <li><a href="http://xmo.optimix.asia/zh-cn/clients/1110/schedule_reports">定期报表</a></li>
+			              </ul>
+			            </li>
+			            
+			            <li class=""><a href="http://xmo.optimix.asia/zh-cn/media_plan_quotations">策划工具</a>
+			            </li>
+			            
+			          </ul>
+			          
+			        </div>
+			        <!-- Single button -->
+			        <div class="x-user-main  navbar-right ">
+			          <div class="x-user-con">
+			              <!-- <img class="x-user " src="https://git.bznx.net/assets/logo-white-ed4a8c29c69c582954818a833b737e7a.png"> -->
+			              <span class="x-user-dis">管理员:&nbsp;&nbsp;Jacob.sun<br></span>
+			              <span class="x-user-arrow icon-dropdown"></span>
+			          </div>
+			          
+			          <ul class="x-user-list">
+			            <span class="nav-arrow"></span>
+			            
+			                <li>
+			                  <a href="/zh-cn/users" class="x-user-config">
+			                    <span class="iclick-ico icon_setting"></span>平台设定
+			                  </a>
+			                </li>
+			            
+			            <li>
+			              <a href="http://xmo.optimix.asia/zh-cn/users/information" class="x-user-config">
+			                <span class="icon_accountsetting icon_setting"></span>账户资料
+			              </a>
+			            </li>
+			            <li>
+			              <a href="http://xmo.optimix.asia/zh-cn/users/changepassword" class="x-user-config">
+			                <span class="icon_password icon_setting"></span>变更密码
+			              </a>
+			            </li>
+			            <li>
+			              <a href="/zh-cn/admin/logout?back_url=http%253A%252F%252Fxmo.optimix.asia%252Fzh-cn%252Fpretargetings%252F2988%252Fedit_bshare" class="x-user-config">
+			                <span class="icon_logout icon_setting"></span>登出
+			              </a>
+			            </li>
+			          </ul>
+			        </div>
+
+			        <!-- <div class="x-user-con navbar-right x-bell">
+			          <a href="http://xmo.optimix.asia/zh-cn/clients/1110/notifications"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span></a>
+			        </div> -->
+			        
+			        <div class="navbar-form navbar-right">
+			          <a href="javascript:void(0);" onclick="change_lang('en');"><span class="x-lang-en "></span></a>
+			          <a href="javascript:void(0);" onclick="change_lang('zh-cn');"><span class="x-lang-ch selected"></span></a>
+			         </div>
+			         
+			      </div>
+			      </div>
+			    </div>
+			  </nav>
+			</div>
+			<!--左边栏-->
+	    		<div class="page_title">
+				  <div id="breadcrumb" class="row">
+				    <!-- Top left headings and links -->
+				   <div class="client-row">
+      
+			      <div class="row"><span class="content_name_12"><a href="http://xmo.optimix.asia/zh-cn/campaigns/cross_marketplace_dashboard?client_id=1110">策划工具</a> &gt; </span><span class="content_name_12">售前策划</span></div>
+			    </div>
+				    
+				    
+				  </div>
+
+				  <!-- Page title -->
+				  
+				   <div class="row"><div class="client-row"><h1>售前策划</h1></div></div>
+				</div>
+
+					
+				<div class="plan-title">
+					<div class="pull-left plan-sub-title">
+						<label>受众人群信息</label>
+					</div>
+					<div class="pull-right">
+						<div class="dropdown" id="export_dropdow">
+						    <a href="#id" data-toggle="dropdown" class="dropdown-pdf"><i class="icon-export-to-nc"></i>输出下载<i class="icon-arrow-down"></i></a>
+						    <ul class="dropdown-menu">
+						      <li>
+						        <div class="white_pointer pointer_position"></div>
+						      </li>
+						      <li class="">
+						        <a href="" id="export_pdf">PDF</a>
+						      </li>
+						      <li class="active">
+						        <a href="" id="export_img">JPG</a>
+						      </li>
+						    </ul>
+						  </div>
+					</div>
+					<div style="clear:both;*zoom:1"></div>
+				</div>
+				
+				<!-- reports -->
+				<div class="forecast-report">
+					<div class="forecast-report-result clearfix">
+						<div class="forecast-result-graph">
+							<div class="forecast-result-text">
+								<div class="forecast-text-header clearfix">
+									<label  id="date_header">MONTHLY IMPRESSION</label>
+								</div>
+								<div class="forecast-text-info clearfix x-mt10">
+									<div class="forecast-text-word word-impr plan-reports-bg-eye">
+										<label>500M</label>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						<div class="forecast-result-graph">
+							<div class="forecast-result-text">
+								<div class="forecast-text-header clearfix">
+									<label  id="date_header">COUNTRIES</label>
+								</div>
+								<div class="forecast-text-info clearfix x-mt10">
+									<div class="forecast-text-tag word-impr">
+										<span class="forecast-tag">China</span>
+										<span class="forecast-tag disabled">HK</span>
+										<span class="forecast-tag">US</span>
+										<span class="forecast-tag">UK</span>
+										<span class="forecast-tag disabled">Singapore</span>
+										<span class="forecast-tag">Egypt</span>
+										<span class="forecast-tag selected">Norway</span>
+										<span class="forecast-tag">Austria</span>
+										<span class="forecast-tag">Austria</span>
+										<span class="forecast-tag">Austria</span>
+										<span class="forecast-tag">Austria</span>
+										<span class="forecast-tag selected">Austria</span>
+										<span class="forecast-tag">Austria</span>
+										<span class="forecast-tag">Austria</span>
+										<span class="forecast-tag selected">Austria</span>
+										<span class="forecast-tag more"><</span>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						<div class="forecast-result-graph">
+							<div class="forecast-result-text">
+								<div class="forecast-result-top">
+									<div class="forecast-text-header clearfix">
+										<label  id="date_header">DEVICE</label>
+									</div>
+									<div class="forecast-text-info clearfix x-mt10">
+										<div class="forecast-text-word word-impr">
+											<span class="forecast-tag">PC</span>
+											<span class="forecast-tag">Mobile</span>
+										</div>
+									</div>
+								</div>
+								<div class="forecast-result-bottom">
+									<div class="forecast-text-header clearfix">
+										<label  id="date_header">AD FORMAT</label>
+									</div>
+									<div class="forecast-text-info clearfix x-mt10">
+										<div class="forecast-text-word word-impr">
+											<span class="forecast-tag">PC</span>
+											<span class="forecast-tag">Banner</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+					
+		<div class="clearfooter"></div>
+			<div class="myfooter">
+			    <label class="x-footer">
+			      Copyright © 2015  iClick Interactive Asia Limited. All Rights Reserved.
+			        <span>| <a target="_blank" href="/zh-cn/admin/send_file_upload_release_notes">产品更新日志
+			        </a></span>
+			      <span>| <a target="_blank" href="/templates/xmo_help.pdf" onclick="_xmoIstag1();">幫助中心</a></span>
+			      <span>| <a href="/zh-cn/privacy_policy">隐私声明</a></span>
+			    </label>
+			    <label class="x-footer">10.1.1.63 v9.26.0(建议采用浏览器: Internet Explorer 8.0 and 9.0, Chrome 8.0+, Firefox 3.5+, Safari 1.0+, Opera V11+.)</label>
+			  </div>
+    <script type="text/javascript">
+    	
+    </script>
+</body>
+</html>

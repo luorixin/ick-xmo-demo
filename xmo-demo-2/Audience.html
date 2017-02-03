@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>客户管理</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Cache-Control" content="no-store" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1"/>
+	 <link rel="stylesheet" type="text/css" href="css/bootstrap-xmo.css">
+  
+	
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/offcanvas.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/calendar/xmo-calendar.css">
+
+
+
+
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/highcharts.js"></script>
+	<script type="text/javascript" src="js/jquery.dataTables.js?"></script>
+	 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	 <script type="text/javascript" src="js/fnPagingInfo.js"></script>
+	 <script type="text/javascript" src="js/extjs.js"></script>
+	 <script type="text/javascript" src="js/xmo-calendar.js"></script>
+
+	 
+	
+</head>
+    <body>
+    	<script type="text/javascript">
+    		var strStoreDate = window.localStorage? localStorage.getItem("menu-display"): Cookie.read("menu-display");
+		      if(strStoreDate && strStoreDate=="hide"){
+		          $("body").addClass("x-hide");
+		      }
+    	</script>
+    	<!--头部-->
+    	<div class="myheading">
+			<nav class="navbar navbar-inverse">
+				<div class="x-navbar">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed my-collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+						<a href="#" class="navbar-brand" data-toggle="offcanvas">
+							<img src="images/logo1.png" alt="" style="width:118px">
+						</a>
+					</div>
+						
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">	
+						 <div class="x-top-menu" >
+							<ul class="nav navbar-nav">
+								<li ><a href="#">Home</a></li>
+								<li ><a href="#">Agencies</a></li>
+								<li ><a href="./index.html">Advertisers</a></li>
+								<li><a href="./Campaigns.html">Campaigns</a></li>
+								<li class="selected">
+									<a href="#">Library</a>
+									<ul class="dropdown-top-menu" aria-labelledby="dropdownMenu1">
+									    <li><a href="./Tracking.html">Tracking</a></li>
+									    <li><a href="./Audience.html">Audience</a></li>
+									    <li><a href="./AdCreative.html">Ad Creatives</a></li>
+									    <li><a href="./AdPlacement.html">Ad Placements</a></li>
+									  </ul>
+								</li>
+								<li><a href="./Report.html">Reports</a></li>
+								<li><a href="./Tools.html">Tools</a></li>
+							</ul>
+							
+						</div>
+						<!-- Single button -->
+						<div class="x-user-main  navbar-right ">
+							<div class="x-user-con">
+									<span class="glyphicon glyphicon-user x-user "></span>
+									<span class="x-user-dis">Admin:<br/>Shirely.admin<br/> </span>
+									<span class="glyphicon glyphicon-triangle-bottom x-user-arrow"></span>
+							</div>
+							<ul class="x-user-list">
+								<li >
+									<span class="iclick-ico"></span>
+									<a class="x-user-config" href="./Platform_setting.html">Platform Setting</a>
+								</li>
+								<li >
+									<span class="glyphicon glyphicon-cog"></span>
+									<a class="x-user-config" href="./Account_setting.html">Account Settings</a>
+								</li>
+								<li >
+									<span class="glyphicon glyphicon-log-out"></span>
+									<a class="x-user-config" href="#">Logout</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="x-user-con navbar-right x-bell">
+							<span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+							<span class="x-tip">6</span>
+						</div>
+						<div class="top-message-list">
+							<div class="top-message">
+				            	<span class="glyphicon glyphicon-alert alert-ico" ></span>
+				            	<span class="glyphicon glyphicon-remove remove-ico" ></span>
+				            	<div class="clearfix">
+				            	Below ad creative(s) have been rejected by some platforms,which may affect the completion of KPI progress.<br>
+				            	NZ_Low Internt_Jan2014 PE_160×600_20140516 <a href="#">Click here</a> to update
+				            	</div>
+			            	</div>
+			            	<div class="top-message">
+				            	<span class="glyphicon glyphicon-alert alert-ico" ></span>
+				            	<span class="glyphicon glyphicon-remove remove-ico" ></span>
+				            	<div class="clearfix">
+				            	Below ad creative(s) have been rejected by some platforms,which may affect the completion of KPI progress.<br>
+				            	NZ_Low Internt_Jan2014 PE_160×600_20140516 <a href="#">Click here</a> to update
+				            	</div>
+			            	</div>
+			            </div>
+						<div class="navbar-form navbar-right" >
+							
+						       
+						        <span class="x-lang-en selected"></span>
+						        <span class="x-lang-ch"></span>
+						      </div>
+					</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<!--左边栏-->
+    	<div class="x-main">
+			<div class="x-nav row row-offcanvas row-offcanvas-left">
+    			<div class="sidebar-offcanvas x-left">
+    				<div class="x-left-title">
+					  	<p>Selected advertiser</p>
+					  	<h1>iClick</h1>
+					</div>
+
+					<div class="x-left-search">
+						<div class="x-search-title"><label>Change accounts</label></div>
+						<div class="x-search-search">
+							<input class="input-search" placeholder="Search advertisers"/>
+						</div>
+					</div>
+					<div class="x-left-content">
+						<ul>
+							<li><a href="#">iClick</a></li>
+							<li><a href="#">碍事梨OTV投放9月</a></li>
+							<li><a href="#">牛栏奶粉</a></li>
+							<li><a href="#">济南底层</a></li>
+							<li><a href="#">克尔瑞济南底层</a></li>
+							<li><a href="#">库克</a></li>
+							<li><a href="#">按皮饮信息科技（北京）有些公司</a></li>
+							<li><a href="#">Grammarly</a></li>
+							<li><a href="#">蘑菇街</a></li>
+							<li><a href="#">雅诗兰黛旅游零售</a></li>
+							<li><a href="#">海蓝之谜旅游零售</a></li>
+							<li><a href="#">MeadJohnson</a></li>
+							<li><a href="#">华帝9月</a></li>
+							<li><a href="#">风衣的那个</a></li>
+							<li><a href="#">米其林投资有限公司</a></li>
+							<li><a href="#">精工</a></li>
+						</ul>
+					</div>
+					
+				</div>
+	    		
+		    	<div class="x-body">
+
+					<div class="x-show-control"></div>
+
+					<!-- 主体区别内容开始 -->
+
+					<!--导航栏
+					<div class="navbar-inverse">
+	        
+						<div class="navbar-collapse " id="topNav">
+							<ul class="nav navbar-nav">
+								<li class="selected"><a href="#">客户列表</a></li>
+								<li><a href="#">订单列表</a></li>
+								<li><a href="#">计划列表 </a><span class="x-tip">10</span></li>
+								<li><a href="#">网站代码</a></li>
+								<li><a href="#">报告中心</a></li>
+							</ul>
+							<div class="clear"></div>
+						</div>
+					</div>
+					-->
+					<div class="x-body-container">
+						 <!-- Page title -->
+						<div class="page-title">
+						  <div id="breadcrumb" class="x-row">
+						    <!-- Top left headings and links -->
+						    <div class="client-row">
+						      
+						      <div class="x-row"><span class="content_name_12">Library</span></div>
+								<div class="x-row"><div class="client-row"><h2>Audience</h2></div></div>
+						    </div>
+						    
+						    </div>
+						  
+						</div>
+						 <!-- Page title -->
+
+						 <!-- nav tab -->
+						<ul class="nav nav-tabs sub-nav-tabs" id="myTab">
+							<li class="active">
+								<a data-toggle="tab" href="#tab-Retargeting">Retargeting</a>
+							</li>
+							<li class="">
+								<a data-toggle="tab" href="#tab-search">Search Retargeting</a>
+							</li>
+							<li class="">
+								<a data-toggle="tab" href="#tab-Custom">Custom</a>
+							</li>
+							<li class="">
+								<a data-toggle="tab" href="#tab-China">Interest Labels(China)</a>
+							</li>
+							<li class="">
+								<a data-toggle="tab" href="#tab-Overseas">Interest Labels(Overseas)</a>
+							</li>
+							
+							
+						</ul>
+						<!-- nav tab -->
+						<div class="tab-content" id="myTabContent">
+							<div class="tab-pane fade in active" id="tab-crossMarket">
+								<ul class="nav nav-pills event_filter">
+									<li class="filter_icon active"><a class="has_tooltip event_filter_link"  href="#" ><i class="glyphicon glyphicon-plus"></i><span> New Audience Group</span></a>
+									</li>
+									<li class="filter_icon active">
+										<div class="dropdown">
+											<input id="select_search" type="hidden" value="1"/>
+										  <button class="btn  dropdown-toggle"  style="min-width:220px;" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+										    Name
+										    <span class="caret arrow-down"></span>
+										  </button>
+										  <ul class="dropdown-menu"  style="min-width:218px;" aria-labelledby="dropdownMenu1">
+										  	<li value="-1"><a href="javascript:filterGlobal();">All</a></li>
+										    <li value="1"><a href="javascript:filterGlobal();">Name</a></li>
+										    <li value="2"><a href="javascript:filterGlobal();">Position</a></li>
+										    <li value="3"><a href="javascript:filterGlobal();">Office</a></li>
+										    <li value="4"><a href="javascript:filterGlobal();">Age</a></li>
+										  </ul>
+										</div>
+									</li>
+									<li class="filter_icon active">
+										<div class="date-range">
+											<i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+											<input type="text" placeholder="" id="daterange" value="2015-06-10 ~ 2015-06-11" class="form-control date-range-input"/>
+											<span class="caret arrow-calendar"></span>
+										</div>
+									</li>
+								</ul>
+								
+								<div class="table_white spacer_right15">	
+									<table id="client_list" class="table table-bordered table-condensed width_100" cellspacing="0" width="100%">
+							        <thead>
+							            <tr>
+							            	<th class="no-sort"><input type="checkbox"/></th>
+							            	<th class="no-sort">Act.</th>
+							                <th >Name</th>
+							                <th>Total Audience</th>
+							                <th>Weekly growth rate</th>
+							                <th>Monthly growth rate</th>
+							                <th>Event audience</th>
+							                <th>Event share</th>
+							                <th>Conv. audience</th>
+							                <th>COnv. Share</th>
+							            </tr>
+							        </thead>
+							 		<tfoot>
+							            <tr>
+							                <td colspan="4" style="text-align:left;border-right:none">
+							                	Selected client group(s):3 (Total 4)
+							                </td>
+							                <td colspan="6" style="text-align:right;border-left:none;">
+							                	<b>
+							                		Total unique audience:< 1 K out of < 1 K | Weekly growth rate:0% | Monthly gorwth rate: +1%
+							                	</b>
+							                </td>
+							            </tr>
+							        </tfoot>
+							        <tbody>
+							            <tr>
+							            	<td style="text-align:center"><input type="checkbox" checked/></td>
+							            	<td class="table-edit">
+							            		<i class="icon-edit glyphicon glyphicon-cog"></i>
+							            		<div class="table-edit-menu">
+							            		
+							            		<ul><li><a href="#">Advertiser Analytics </a></li>
+							            			<li><a href="#">Edit Advertiser </a></li>
+							            		</ul>
+							            		</div>
+							            	</td>	
+							                <td>Homepage Audiecne</td>
+							                <td>33k</td>
+							                <td>0%</td>
+							                <td>0%</td>
+							                <td>1</td>
+							                <td>0%</td>
+							                <td>0</td>
+							                <td>0%</td>
+							            </tr>
+							            <tr>
+							            	<td style="text-align:center"><input type="checkbox" checked/></td>
+							            	<td class="table-edit">
+							            		<i class="icon-edit glyphicon glyphicon-cog"></i>
+							            		<div class="table-edit-menu">
+							            		
+							            		<ul><li><a href="#">Advertiser Analytics </a></li>
+							            			<li><a href="#">Edit Advertiser </a></li>
+							            		</ul>
+							            		</div>
+							            	</td>	
+							                <td>Homepage Audiecne</td>
+							                <td>33k</td>
+							                <td>0%</td>
+							                <td>0%</td>
+							                <td>1</td>
+							                <td>0%</td>
+							                <td>0</td>
+							                <td>0%</td>
+							            </tr>
+							            <tr>
+							            	<td style="text-align:center"><input type="checkbox" checked/></td>
+							            	<td class="table-edit">
+							            		<i class="icon-edit glyphicon glyphicon-cog"></i>
+							            		<div class="table-edit-menu">
+							            		
+							            		<ul><li><a href="#">Advertiser Analytics </a></li>
+							            			<li><a href="#">Edit Advertiser </a></li>
+							            		</ul>
+							            		</div>
+							            	</td>	
+							                <td>Homepage Audiecne</td>
+							                <td>33k</td>
+							                <td>0%</td>
+							                <td>0%</td>
+							                <td>1</td>
+							                <td>0%</td>
+							                <td>0</td>
+							                <td>0%</td>
+							            </tr>
+							            <tr>
+							            	<td style="text-align:center"><input type="checkbox" /></td>
+							            	<td class="table-edit">
+							            		<i class="icon-edit glyphicon glyphicon-cog"></i>
+							            		<div class="table-edit-menu">
+							            		
+							            		<ul><li><a href="#">Advertiser Analytics </a></li>
+							            			<li><a href="#">Edit Advertiser </a></li>
+							            		</ul>
+							            		</div>
+							            	</td>	
+							                <td>Homepage Audiecne</td>
+							                <td>33k</td>
+							                <td>0%</td>
+							                <td>0%</td>
+							                <td>1</td>
+							                <td>0%</td>
+							                <td>0</td>
+							                <td>0%</td>
+							            </tr>
+							            
+							            
+								        </tbody>
+								    </table>
+								</div>
+
+							</div>
+							<div class="tab-pane fade" id="tab-Audience">
+								Audience
+							</div>
+						</div>
+						
+				</div>
+			</div>  
+		</div>
+		<div class="clear"></div>
+			<div class="x-nav row row-offcanvas row-offcanvas-left">
+			<div class="sidebar-offcanvas"></div>
+			<div class="myfooter">
+					© 2009 - 2015 iClick Interactive Asia Limited. All Rights Reserved. 
+			</div>
+		</div>
+    </body>
+    <script type="text/javascript">
+    	$(".switch").click(function(){
+    		if($(this).hasClass("switch-disable-ing") ){
+    			$(this).removeClass("switch-disable-ing");
+    			$(this).find("input").attr("checked",true);
+    		}else{
+    			$(this).addClass("switch-disable-ing");
+    			$(this).find("input").attr("checked",false);
+    		}
+    			
+    	})
+
+    	$(function(){
+        	new xmoCalendar({
+			  inputId : '#daterange',
+			  // lang : 'EN',
+			  lang : "CN", //"CN" "EN"
+			  initTime : '2013-10-28',
+			  submitCallback : function(){
+			      update_days_remaining();
+			  },
+			  
+			})
+	      
+			var oTable=$('#client_list').dataTable({
+					"oLanguage": {
+						"sProcessing":   "处理中...",
+						"sLengthMenu":   "显示 _MENU_ 项结果",
+						"sZeroRecords":  "没有匹配结果",
+						"sInfo":         "（共 _TOTAL_ 项）",
+						"sInfoEmpty":    "（共 0 项）",
+						"sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+						"sInfoPostFix":  "",
+						"sSearch":       "寻找:",
+						"sUrl":          "",
+						"oPaginate": {
+							"sFirst":    "&nbsp;",
+							"sPrevious": "&nbsp;",
+							"sNext":     "&nbsp;",
+							"sLast":     "&nbsp;"
+						}
+					},
+					  "sDom": "<'x'>t<'table_bottom'<'table_length'l><'table_pagin'p><'table_info'i>>",
+					  "sPaginationType": "extStyle",
+					  "bPaginate": true,
+					  "iDisplayLength": 15,
+					  "bLengthChange": true,
+					  "bAutoWidth": false,
+					  "aaSorting": []
+				});
+			
+			 
+			  
+		} );
+		var currentColumn=0;
+		function filterGlobal () {
+		    var rowIndex=$("#select_search").val();
+		   
+	    	 if(currentColumn!=rowIndex){
+		    	filterClear(currentColumn);
+		    }
+		     if(rowIndex=="-1"){
+		    	$('#client_list').DataTable().search(
+			        $('.global_filter').val()
+			    ).draw();
+		    }else{
+			    filterColumn(rowIndex);
+		    }
+		     currentColumn=rowIndex;
+		}
+		function filterColumn ( i ) {
+
+		    $('#client_list').DataTable().column( i ).search(
+		        $('.global_filter').val()
+		    ).draw();
+		}
+		function filterClear(i){
+			if (i==-1) {
+				$('#client_list').DataTable().search(
+			        ""
+			    ).draw();
+			}else{
+				$('#client_list').DataTable().column( i ).search(
+			        ""
+			    ).draw();
+			}
+			
+		}
+		$('input.global_filter').on( 'keyup', function () {
+		      filterGlobal();
+    	} );
+	
+    </script>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>客户管理</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Cache-Control" content="no-store" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1"/>
+	 <link rel="stylesheet" type="text/css" href="css/bootstrap-xmo.css">
+  
+	
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/offcanvas.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/chosen/chosen.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/multilayer/multilayer.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/calendar/xmo-calendar.css">
+
+
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	 <script type="text/javascript" src="js/jquery-migrate-1.2.1.js"></script>
+	 <script type="text/javascript" src="js/chosen.jquery.min.js"></script>
+	 <script type="text/javascript" src="js/multilayer.js"></script>	
+	 <script type="text/javascript" src="js/xmo-calendar.js"></script>
+
+
+	
+</head>
+    <body>
+    	<script type="text/javascript">
+    		var strStoreDate = window.localStorage? localStorage.getItem("menu-display"): Cookie.read("menu-display");
+		      if(strStoreDate && strStoreDate=="hide"){
+		          $("body").addClass("x-hide");
+		      }
+    	</script>
+    	<!--头部-->
+    	<div class="myheading">
+			<nav class="navbar navbar-inverse">
+				<div class="x-navbar">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed my-collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				      </button>
+						<a href="#" class="navbar-brand" data-toggle="offcanvas">
+							<img src="images/logo1.png" alt="" style="width:118px">
+						</a>
+					</div>
+						
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">	
+						 <div class="x-top-menu" >
+							<ul class="nav navbar-nav">
+								<li ><a href="#">Home</a></li>
+								<li ><a href="#">Agencies</a></li>
+								<li><a href="./index.html">Advertisers</a></li>
+								<li><a href="./Campaigns.html">Campaigns</a></li>
+								<li>
+									<a href="#">Library</a>
+									<ul class="dropdown-top-menu" aria-labelledby="dropdownMenu1">
+									    <li><a href="./Tracking.html">Tracking</a></li>
+									    <li><a href="./Audience.html">Audience</a></li>
+									    <li><a href="./AdCreative.html">Ad Creatives</a></li>
+									    <li><a href="./AdPlacement.html">Ad Placements</a></li>
+									  </ul>
+								</li>
+								<li class="selected"><a href="./Report.html">Reports</a></li>
+								<li><a href="./Tools.html">Tools</a></li>
+							</ul>
+							
+						</div>
+						<!-- Single button -->
+						<div class="x-user-main  navbar-right ">
+							<div class="x-user-con">
+									<span class="glyphicon glyphicon-user x-user "></span>
+									<span class="x-user-dis">Admin:<br/>Shirely.admin<br/> </span>
+									<span class="glyphicon glyphicon-triangle-bottom x-user-arrow"></span>
+							</div>
+							<ul class="x-user-list">
+								<li >
+									<span class="iclick-ico"></span>
+									<a class="x-user-config" href="./Platform_setting.html">Platform Setting</a>
+								</li>
+								<li >
+									<span class="glyphicon glyphicon-cog"></span>
+									<a class="x-user-config" href="./Account_setting.html">Account Settings</a>
+								</li>
+								<li >
+									<span class="glyphicon glyphicon-log-out"></span>
+									<a class="x-user-config" href="#">Logout</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="x-user-con navbar-right x-bell">
+							<span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+							<span class="x-tip">6</span>
+						</div>
+						
+						<div class="navbar-form navbar-right" >
+							
+						       
+						        <span class="x-lang-en selected"></span>
+						        <span class="x-lang-ch"></span>
+						      </div>
+					</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<!--左边栏-->
+    	<div class="x-main">
+			<div class="x-nav row row-offcanvas row-offcanvas-left">
+    			<div class="sidebar-offcanvas x-left">
+    				<div class="x-left-title">
+					  	<p>Selected advertiser</p>
+					  	<h1>iClick</h1>
+					</div>
+
+					<div class="x-left-search">
+						<div class="x-search-title"><label>Change accounts</label></div>
+						<div class="x-search-search">
+							<input class="input-search" placeholder="Search advertisers"/>
+						</div>
+					</div>
+					<div class="x-left-content">
+						<div class="x-left-tree">
+							<label >Orders</label>
+							<ul >
+								<li><label><a href="javascript:;" title="iClick to iCLick Iclick Iclick Iclick">iClick to iCLick Iclick Iclick Iclick</a></label></li>
+								<li><label><a href="javascript:;">碍事梨OTV投放9月</a></label></li>
+								<li>
+									<label><a href="javascript:;">牛栏奶粉</a></label>
+									<ul class="x-left-tree-child">
+								
+										<li><label><a href="javascript:;">Grammarly</a></label>
+											<ul class="x-left-tree-child">
+								
+												<li><label><a href="javascript:;">Grammarly</a></label></li>
+												<li><label><a href="javascript:;">蘑菇街</a></label></li>
+												<li><label><a href="javascript:;">雅诗兰黛旅游零售</a></label></li>
+												<li><label><a href="javascript:;">海蓝之谜旅游零售</a></label></li>
+												<li><label><a href="javascript:;">MeadJohnson</a></label></li>
+											
+											</ul>
+										</li>
+										<li><label><a href="javascript:;">蘑菇街</a></label></li>
+										<li><label><a href="javascript:;">雅诗兰黛旅游零售</a></label></li>
+										<li><label><a href="javascript:;">海蓝之谜旅游零售</a></label></li>
+										<li><label><a href="javascript:;">MeadJohnson</a></label></li>
+									
+									</ul>
+								</li>
+								<li><label><a href="javascript:;">济南底层</a></label></li>
+								
+							</ul>
+						</div>
+						<div class="x-left-tree">
+							<label >Orders</label>
+							<ul >
+								<li><label><a href="javascript:;" title="iClick to iCLick Iclick Iclick Iclick">iClick to iCLick Iclick Iclick Iclick</a></label></li>
+								<li><label><a href="javascript:;">碍事梨OTV投放9月</a></label></li>
+								<li>
+									<label><a href="javascript:;">牛栏奶粉</a></label>
+									<ul class="x-left-tree-child">
+								
+										<li><label><a href="javascript:;">Grammarly</a></label></li>
+										<li><label><a href="javascript:;">蘑菇街</a></label></li>
+										<li><label><a href="javascript:;">雅诗兰黛旅游零售</a></label></li>
+										<li><label><a href="javascript:;">海蓝之谜旅游零售</a></label></li>
+										<li><label><a href="javascript:;">MeadJohnson</a></label></li>
+									
+									</ul>
+								</li>
+								<li><label><a href="javascript:;">济南底层</a></label></li>
+								
+							</ul>
+						</div>
+						<div class="x-left-tree">
+							<label >Orders</label>
+							<ul >
+								<li><label><a href="javascript:;" title="iClick to iCLick Iclick Iclick Iclick">iClick to iCLick Iclick Iclick Iclick</a></label></li>
+								<li><label><a href="javascript:;">碍事梨OTV投放9月</a></label></li>
+								<li>
+									<label><a href="javascript:;">牛栏奶粉</a></label>
+									<ul class="x-left-tree-child">
+								
+										<li><label><a href="javascript:;">Grammarly</a></label></li>
+										<li><label><a href="javascript:;">蘑菇街</a></label></li>
+										<li><label><a href="javascript:;">雅诗兰黛旅游零售</a></label></li>
+										<li><label><a href="javascript:;">海蓝之谜旅游零售</a></label></li>
+										<li><label><a href="javascript:;">MeadJohnson</a></label></li>
+									
+									</ul>
+								</li>
+								<li><label><a href="javascript:;">济南底层</a></label></li>
+								
+							</ul>
+						</div>
+						<div class="x-left-tree">
+							<label >Orders</label>
+							<ul >
+								<li><label><a href="javascript:;" title="iClick to iCLick Iclick Iclick Iclick">iClick to iCLick Iclick Iclick Iclick</a></label></li>
+								<li><label><a href="javascript:;">碍事梨OTV投放9月</a></label></li>
+								<li>
+									<label><a href="javascript:;">牛栏奶粉</a></label>
+									<ul class="x-left-tree-child">
+								
+										<li><label><a href="javascript:;">Grammarly</a></label></li>
+										<li><label><a href="javascript:;">蘑菇街</a></label></li>
+										<li><label><a href="javascript:;">雅诗兰黛旅游零售</a></label></li>
+										<li><label><a href="javascript:;">海蓝之谜旅游零售</a></label></li>
+										<li><label><a href="javascript:;">MeadJohnson</a></label></li>
+									
+									</ul>
+								</li>
+								<li><label><a href="javascript:;">济南底层</a></label></li>
+								
+							</ul>
+						</div>
+					</div>
+					
+				</div>
+	    		
+		    	<div class="x-body">
+
+					<div class="x-show-control"></div>
+
+					
+					<div class="x-body-container">
+						 <!-- Page title -->
+						<div class="page-title">
+						  <div id="breadcrumb" class="x-row">
+						    <!-- Top left headings and links -->
+						    <div class="client-row">
+						      
+						      <div class="x-row"><span class="content_name_12">Reports</span>
+								<span class="content_name_12"> > Create a new Report</span>
+						      </div>
+								<div class="x-row"><div class="client-row"><h2>Create a new Report</h2></div></div>
+						    </div>
+						    
+						    </div>
+						  
+						  
+						</div>
+						 <!-- Page title -->
+
+						 <!-- step line -->
+						 <div class="step-line">
+						 	<div class="steps">
+					            <div class="wrap">
+					              <div class="current">
+					                <label><span class="round">1</span><span>Audience Selection</span></label>
+					              </div>
+					            </div>
+				            	<div class="wrap-line">
+				           			<label><span>———</span></label>
+				           		</div>
+					            <div class="wrap">
+					              <div class="todo">
+					                <label><span class="round">2</span><span>Media Selection</span></label>
+					              </div>
+					            </div>
+					           
+					           	<div class="wrap right">
+					            	<div class="last">
+					            		<label class="switch" for="switch-input">
+											<input type="checkbox" checked="">
+											<span class="switch-left"></span>
+											<i class="controller"></i>
+											<span class="switch-right"></span>
+										</label>
+					            	</div>
+					            </div>
+					            <div class="wrap right">
+					            	<div>
+					            		<label>Activate this paln</label>
+					            	</div>
+					            </div>
+					            
+					        </div>
+						 </div>
+
+						<!-- step line -->
+
+						<div class="edit-container">
+							<form class="form-horizontal">
+								<h3 class="">Audience Selection</h3>
+								
+								<div class="control-group">
+									<label class="control-label">Retargeting audience</label>
+									<div class="controls">
+										<div class="dropdown">
+											<input name="advertise" type="hidden" value="iClick"/>
+										  <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+										    iClick
+										    <span class="caret arrow-down"></span>
+										  </button>
+										  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+										    <li value="iClick"><a href="javascript:;">iClick</a></li>
+										    <li value="Another"><a href="javascript:;">Another action</a></li>
+										    <li value="Something"><a href="javascript:;">Something else here</a></li>
+										    <li value="Separated"><a href="javascript:;">Separated link</a></li>
+										  </ul>
+										</div>
+									</div>
+									<div class="controls">
+										<div class="add-conditon">
+											<i class="glyphicon glyphicon-plus-sign"></i>
+											<a href="#" >a new retargeting audience group</a>
+										</div>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Search Retargeting audience</label>
+									<div class="controls">
+										<div class="dropdown">
+											<input name="advertise" type="hidden" value="iClick"/>
+										  <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+										    iClick
+										    <span class="caret arrow-down"></span>
+										  </button>
+										  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+										    <li value="iClick"><a href="javascript:;">iClick</a></li>
+										    <li value="Another"><a href="javascript:;">Another action</a></li>
+										    <li value="Something"><a href="javascript:;">Something else here</a></li>
+										    <li value="Separated"><a href="javascript:;">Separated link</a></li>
+										  </ul>
+										</div>
+									</div>
+									<div class="controls">
+										<div class="add-conditon">
+											<i class="glyphicon glyphicon-plus-sign"></i>
+											<a href="#">a new retargeting audience group</a>
+										</div>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Customer audience</label>
+									<div class="controls">
+										<div class="dropdown">
+											<input name="advertise" type="hidden" value="iClick"/>
+										  <button class="btn  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+										    iClick
+										    <span class="caret arrow-down"></span>
+										  </button>
+										  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+										    <li value="iClick"><a href="javascript:;">iClick</a></li>
+										    <li value="Another"><a href="javascript:;">Another action</a></li>
+										    <li value="Something"><a href="javascript:;">Something else here</a></li>
+										    <li value="Separated"><a href="javascript:;">Separated link</a></li>
+										  </ul>
+										</div>
+									</div>
+									<div class="controls">
+										<div class="add-conditon">
+											<i class="glyphicon glyphicon-plus-sign"></i>
+											<a href="#">a new customer audience group</a>
+										</div>
+									</div>
+								</div>
+
+								<div class="control-group">
+									<label class="control-label">Interest Labels</label>
+									<div class="controls">
+											<div class="" id="multilayer" style="width:500px;">
+											</div>
+											
+									</div>
+								</div>
+
+								<div class="control-group">
+									<label class="control-label">Gender</label>
+									<div class="controls">
+								          <select class="select span4 required" multiple id="chosen_test" disname="chosen下拉">
+								            <option value="">请选择</option>
+								            <option value="2">2</option>
+								            <option value="3">3</option>
+								            <option value="4">4</option>
+								            <option value="5">5</option>
+								          </select>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Age groups</label>
+									<div class="controls">
+								          <select class="select span4 required" multiple id="chosen_test1" disname="chosen下拉">
+								            <option value="">请选择</option>
+								            <option value="2">2</option>
+								            <option value="3">3</option>
+								            <option value="4">4</option>
+								            <option value="5">5</option>
+								          </select>
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<button type="button" class="btn btn-success">Save</button>
+									<button type="button" class="btn btn-cancel">Cancle</button>
+								</div>
+							</form>
+						</div>
+						
+				</div>
+			</div>  
+		</div>
+		<div class="clear"></div>
+			<div class="x-nav row row-offcanvas row-offcanvas-left">
+			<div class="sidebar-offcanvas"></div>
+			<div class="myfooter">
+					© 2009 - 2015 iClick Interactive Asia Limited. All Rights Reserved. 
+			</div>
+		</div>
+    </body>
+    <script type="text/javascript">
+    	$(function(){
+    		$("#chosen_test").chosen();
+    		$("#chosen_test1").chosen();
+    	})
+    	var multi = new multilayer({
+		  container : $("#multilayer"),
+		  // lang : 'EN',
+		  lang : "EN", //"CN" "EN"
+		  values : [{"name":"高档汽车","name_en":"High-End Cars","audience_id":1194,"parent_id":0,"children":[]},{"name":"中档汽车","name_en":"Mid-range Cars naaaaaaaaaa2123123123123aaaa","audience_id":1195,"parent_id":0,"children":[]},{"name":"入门级汽车","name_en":"Economy Cars","audience_id":1204,"parent_id":0,"children":[]},{"name":"二手车","name_en":"Used Cars","audience_id":1197,"parent_id":0,"children":[]},{"name":"汽车租赁","name_en":"Rental Cars","audience_id":1198,"parent_id":0,"children":[]},{"name":"豪华汽车","name_en":"Luxury Cars","audience_id":1199,"parent_id":0,"children":[]},{"name":"汽车保险","name_en":"Auto Insurance","audience_id":1200,"parent_id":0,"children":[]},{"name":"日本韩国车","name_en":"Japan & Korea (Car)","audience_id":1201,"parent_id":0,"children":[]},{"name":"德国车","name_en":"Germany (Car)","audience_id":1202,"parent_id":0,"children":[]},{"name":"美国车","name_en":"United States (Car)","audience_id":1203,"parent_id":0,"children":[]},{"name":"国产车","name_en":"China (Car)","audience_id":1205,"parent_id":0,"children":[]},{"name":"三厢车","name_en":"Sedan","audience_id":1206,"parent_id":0,"children":[]},{"name":"轿跑车","name_en":"Coupe","audience_id":1207,"parent_id":0,"children":[]},{"name":"两厢车","name_en":"Hatchback","audience_id":1208,"parent_id":0,"children":[]},{"name":"越野车","name_en":"SUV","audience_id":1210,"parent_id":0,"children":[]},{"name":"面包车","name_en":"Van","audience_id":1211,"parent_id":0,"children":[]},{"name":"旅行车","name_en":"Station Wagon","audience_id":1212,"parent_id":0,"children":[]},{"name":"敞篷车","name_en":"Convertible","audience_id":1214,"parent_id":0,"children":[]},{"name":"多功能车","name_en":"MPV","audience_id":1215,"parent_id":0,"children":[]},{"name":"跑车","name_en":"Sports Car","audience_id":1216,"parent_id":0,"children":[]},{"name":"护肤","name_en":"Skin Care","audience_id":1217,"parent_id":0,"children":[{"name":"抗衰老去皱","name_en":"Anti-aging / Wrinkles","audience_id":1218,"parent_id":1217},{"name":"补水保湿","name_en":"Hydration","audience_id":1219,"parent_id":1217},{"name":"美白提亮祛斑","name_en":"Brightening & Whitening","audience_id":1220,"parent_id":1217},{"name":"隔离防晒","name_en":"Sunscreen","audience_id":1221,"parent_id":1217},{"name":"清洁卸妆","name_en":"Cleansing & Makeup Removal","audience_id":1222,"parent_id":1217},{"name":"男士护肤","name_en":"Men's Skincare","audience_id":1223,"parent_id":1217},{"name":"祛痘","name_en":"Acne Removing","audience_id":1224,"parent_id":1217},{"name":"抗过敏","name_en":"Anti-allergy","audience_id":1225,"parent_id":1217},{"name":"眼部护理","name_en":"Eyecare","audience_id":1226,"parent_id":1217},{"name":"身体护肤","name_en":"Bodycare","audience_id":1227,"parent_id":1217}]}],
+		   selected:["1218","1219","1220","1221","1222","1223","1224","1225","1226"],
+		  // ["66a1","66a11","66a111","66a1111","66a1112","66a13","66a14","66a3"],//
+		  	result:$("#result"),
+		  	callback:callBackFun
+
+		  
+		})
+		function callBackFun(ids){
+			console.log(ids);
+		}
+		
+    </script>
+</html>
